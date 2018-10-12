@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.miw.cn/"/>
-  <updated>2018-10-12T09:08:46.903Z</updated>
+  <updated>2018-10-12T09:11:10.344Z</updated>
   <id>http://www.miw.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.miw.cn/2018/10/12/wangeditorext-wei-wangeditor-zeng-jia-quan-ping-bian-ji-cha-kan-yuan-ma-gong-neng/"/>
     <id>http://www.miw.cn/2018/10/12/wangeditorext-wei-wangeditor-zeng-jia-quan-ping-bian-ji-cha-kan-yuan-ma-gong-neng/</id>
     <published>2018-10-12T09:05:43.000Z</published>
-    <updated>2018-10-12T09:08:46.903Z</updated>
+    <updated>2018-10-12T09:11:10.344Z</updated>
     
     <summary type="html">
     
@@ -34,6 +34,8 @@
       
     
     </summary>
+    
+      <category term="Javascript" scheme="http://www.miw.cn/categories/Javascript/"/>
     
     
       <category term="javascript" scheme="http://www.miw.cn/tags/javascript/"/>
