@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>蜜友工作室</title>
+  
+  <subtitle>蜜友工作室</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.miw.cn/"/>
+  <updated>2018-10-12T06:35:52.092Z</updated>
+  <id>http://www.miw.cn/</id>
+  
+  <author>
+    <name>mrzhou</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://www.miw.cn/2018/10/12/hello-world/"/>
+    <id>http://www.miw.cn/2018/10/12/hello-world/</id>
+    <published>2018-10-12T05:14:00.000Z</published>
+    <updated>2018-10-12T06:35:52.092Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://www.miw.cn/categories/Java/"/>
+    
+    
+      <category term="java" scheme="http://www.miw.cn/tags/java/"/>
+    
+      <category term="redis" scheme="http://www.miw.cn/tags/redis/"/>
+    
+      <category term="hexo" scheme="http://www.miw.cn/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
