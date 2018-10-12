@@ -249,13 +249,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        wangEditorExt,为wangEditor增加全屏编辑,查看源码功能
+                        2005年前网站作品
                     </div>
                 </div>
             </div>
@@ -275,12 +275,12 @@
             
             <div class="article-tag">
                 
-                <a href="../../../../tags/javascript/" target="_blank">
-                    <span class="chip bg-color">javascript</span>
+                <a href="../../../../tags/web/" target="_blank">
+                    <span class="chip bg-color">web</span>
                 </a>
                 
-                <a href="../../../../tags/wangEditor/" target="_blank">
-                    <span class="chip bg-color">wangEditor</span>
+                <a href="../../../../tags/asp/" target="_blank">
+                    <span class="chip bg-color">asp</span>
                 </a>
                 
             </div>
@@ -290,8 +290,8 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="../../../../categories/前端/" class="post-category" target="_blank">
-                        前端
+                    <a href="../../../../categories/作品/" class="post-category" target="_blank">
+                        作品
                     </a>
                     
                 </span>
@@ -305,11 +305,31 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="wangEditorExt"><a href="#wangEditorExt" class="headerlink" title="wangEditorExt"></a>wangEditorExt</h1><p>wangEditorExt,为wangEditor增加全屏编辑,查看源码功能</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * wangEditor扩展,增加全屏 查看源码功能</span></span><br><span class="line"><span class="comment"> * 传入均为 editor实例,非css选择器</span></span><br><span class="line"><span class="comment"> * 依赖jquery 如果是layui之类的需要在layui.use方法中使用</span></span><br><span class="line"><span class="comment"> * 全屏功能需要引入 wangEditor-fullscreen.css</span></span><br><span class="line"><span class="comment"> * @author mrzhou@miw.cn</span></span><br><span class="line"><span class="comment"> * @date 2018.8.30 am 10:00</span></span><br><span class="line"><span class="comment"> *       2018.9.18 pm 16:00 增加同页多编辑器支持</span></span><br><span class="line"><span class="comment"> * 使用方法:</span></span><br><span class="line"><span class="comment"> * E.fullscreen.init(editor);</span></span><br><span class="line"><span class="comment"> * E.viewSource.init(editor);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-<h3 id="附上一个测试样例"><a href="#附上一个测试样例" class="headerlink" title="附上一个测试样例"></a>附上一个测试样例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"editor"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> E = <span class="built_in">window</span>.wangEditor;</span></span><br><span class="line"><span class="actionscript"><span class="keyword">var</span> editor = <span class="keyword">new</span> E(<span class="string">'#editor'</span>);</span></span><br><span class="line"><span class="undefined">editor.create();</span></span><br><span class="line"><span class="undefined">E.fullscreen.init(editor);</span></span><br><span class="line"><span class="undefined">E.viewSource.init(editor);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/miws/wangEditorExt" target="_blank" rel="noopener">wangEditorExt项目</a><br><a href="https://github.com/wangfupeng1988/wangEditor" target="_blank" rel="noopener">wangEditor项目</a><br><a href="https://github.com/askmiw/simpleweb" target="_blank" rel="noopener">超级简单的JAVA mvc框架,全免配置</a></p>
-
+                <h2 id="2005年前的网站作品"><a href="#2005年前的网站作品" class="headerlink" title="2005年前的网站作品"></a>2005年前的网站作品</h2><p>2005年以前, 主要还在微软体系下工作, DOS使用的也是MSDOS, 桌面系统(foxBase/foxPro,VB/Delphi),网站系统(ASP).</p>
+<ul>
+<li>云岭党建网(1998)</li>
+</ul>
+<img src="/2018/10/12/2005-nian-qian-wang-zhan-zuo-pin/(1998)ccp.org.cn.png" title="云岭党建网(1998)">
+<ul>
+<li>云南房网(2000)</li>
+</ul>
+<img src="/2018/10/12/2005-nian-qian-wang-zhan-zuo-pin/(2000)ynhouse.com.png" title="云南房网(2000)">
+<ul>
+<li>昆明房产信息网(2003)</li>
+</ul>
+<img src="/2018/10/12/2005-nian-qian-wang-zhan-zuo-pin/(2003)kmhouse.org.png" title="昆明房产信息网(2003)">
+<ul>
+<li>中国普生肿瘤医学网(2004)</li>
+</ul>
+<img src="/2018/10/12/2005-nian-qian-wang-zhan-zuo-pin/(2004)cnptm.com.png" title="中国普生肿瘤医学网(2004)">
+<ul>
+<li>北京金台博物馆(2004)</li>
+</ul>
+<img src="/2018/10/12/2005-nian-qian-wang-zhan-zuo-pin/(2004)jintaimuseum.org.png" title="北京金台博物馆(2004)">
+<ul>
+<li>昆明公积金网(2005)</li>
+</ul>
+<img src="/2018/10/12/2005-nian-qian-wang-zhan-zuo-pin/(2005)kmgjj.com.png" title="昆明公积金网(2005)">
             </div>
             <hr/>
 
@@ -447,7 +467,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://www.miw.cn" class="b-link-green">蜜友工作室</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="" class="b-link-green">wangEditorExt,为wangEditor增加全屏编辑,查看源码功能</a>
+                    <a href="" class="b-link-green">2005年前网站作品</a>
                 </p>
             </div>
         </div>
@@ -464,10 +484,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="../2005-nian-qian-wang-zhan-zuo-pin/">
+                <a href="">
                     <div class="card-image">
                         
                         
@@ -489,9 +509,9 @@
 
 </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -504,6 +524,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -524,19 +545,18 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="../hello-world/">
+                <a href="../wangeditorext-wei-wangeditor-zeng-jia-quan-ping-bian-ji-cha-kan-yuan-ma-gong-neng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="wangEditorExt,为wangEditor增加全屏编辑,查看源码功能">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">wangEditorExt,为wangEditor增加全屏编辑,查看源码功能</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">这是第一篇, 你好, 蜜友!欢迎来到蜜友工作室. 这是基于hexo 构造的网站.
-1System.out.println("你好, 蜜友!");
-</div>
+                    <div class="summary">wangEditorExtwangEditorExt,为wangEditor增加全屏编辑,查看源码功能
+123456789101112/** * wangEditor扩展,增加全屏 查看源码功能 * 传入均为 editor实例,非css选择</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-12
@@ -545,8 +565,8 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="../../../../categories/Java/" class="post-category" target="_blank">
-                                    Java
+                            <a href="../../../../categories/前端/" class="post-category" target="_blank">
+                                    前端
                                 </a>
                             
                             
@@ -556,16 +576,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="../../../../tags/java/" target="_blank">
-                        <span class="chip bg-color">java</span>
+                    <a href="../../../../tags/javascript/" target="_blank">
+                        <span class="chip bg-color">javascript</span>
                     </a>
                     
-                    <a href="../../../../tags/redis/" target="_blank">
-                        <span class="chip bg-color">redis</span>
-                    </a>
-                    
-                    <a href="../../../../tags/hexo/" target="_blank">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="../../../../tags/wangEditor/" target="_blank">
+                        <span class="chip bg-color">wangEditor</span>
                     </a>
                     
                 </div>
