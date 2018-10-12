@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.miw.cn/"/>
-  <updated>2018-10-12T08:50:40.221Z</updated>
+  <updated>2018-10-12T09:00:51.208Z</updated>
   <id>http://www.miw.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.miw.cn/2018/10/12/hello-world/"/>
     <id>http://www.miw.cn/2018/10/12/hello-world/</id>
     <published>2018-10-12T05:14:00.000Z</published>
-    <updated>2018-10-12T08:50:40.221Z</updated>
+    <updated>2018-10-12T09:00:51.208Z</updated>
     
     <summary type="html">
     
@@ -29,8 +29,7 @@
       
         
         
-          &lt;h2 id=&quot;这是第一篇-你好-蜜友&quot;&gt;&lt;a href=&quot;#这是第一篇-你好-蜜友&quot; class=&quot;headerlink&quot; title=&quot;这是第一篇, 你好, 蜜友!&quot;&gt;&lt;/a&gt;这是第一篇, 你好, 蜜友!&lt;/h2&gt;&lt;p&gt;欢迎来到蜜友工作室.&lt;/p&gt;
-&lt;figure
+          &lt;h2 id=&quot;这是第一篇-你好-蜜友&quot;&gt;&lt;a href=&quot;#这是第一篇-你好-蜜友&quot; class=&quot;headerlink&quot; title=&quot;这是第一篇, 你好, 蜜友!&quot;&gt;&lt;/a&gt;这是第一篇, 你好, 蜜友!&lt;/h2&gt;&lt;p&gt;欢迎来到蜜友工作室. 这是基于hexo
         
       
     

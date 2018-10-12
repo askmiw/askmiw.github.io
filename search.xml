@@ -7,7 +7,7 @@
       <link href="/2018/10/12/hello-world/"/>
       <url>/2018/10/12/hello-world/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是第一篇-你好-蜜友"><a href="#这是第一篇-你好-蜜友" class="headerlink" title="这是第一篇, 你好, 蜜友!"></a>这是第一篇, 你好, 蜜友!</h2><p>欢迎来到蜜友工作室.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.pringln(<span class="string">"你好, 蜜友!"</span>);</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="这是第一篇-你好-蜜友"><a href="#这是第一篇-你好-蜜友" class="headerlink" title="这是第一篇, 你好, 蜜友!"></a>这是第一篇, 你好, 蜜友!</h2><p>欢迎来到蜜友工作室. 这是基于hexo 构造的网站.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">"你好, 蜜友!"</span>);</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
