@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.miw.cn/"/>
-  <updated>2018-10-12T15:18:19.142Z</updated>
+  <updated>2018-10-12T16:02:10.139Z</updated>
   <id>http://www.miw.cn/</id>
   
   <author>
@@ -17,11 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2005-2010年网站作品</title>
+    <link href="http://www.miw.cn/2018/10/12/2005-2010-nian-wang-zhan-zuo-pin/"/>
+    <id>http://www.miw.cn/2018/10/12/2005-2010-nian-wang-zhan-zuo-pin/</id>
+    <published>2018-10-12T15:37:15.000Z</published>
+    <updated>2018-10-12T16:02:10.139Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;2005-2010年网站作品&quot;&gt;&lt;a href=&quot;#2005-2010年网站作品&quot; class=&quot;headerlink&quot; title=&quot;2005-2010年网站作品&quot;&gt;&lt;/a&gt;2005-2010年网站作品&lt;/h2&gt;&lt;p&gt;自2005年始, 全面转向JAVA阵营.
+        
+      
+    
+    </summary>
+    
+      <category term="作品" scheme="http://www.miw.cn/categories/%E4%BD%9C%E5%93%81/"/>
+    
+    
+      <category term="web" scheme="http://www.miw.cn/tags/web/"/>
+    
+      <category term="java" scheme="http://www.miw.cn/tags/java/"/>
+    
+      <category term="servlet" scheme="http://www.miw.cn/tags/servlet/"/>
+    
+      <category term="hibernate" scheme="http://www.miw.cn/tags/hibernate/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2005年前网站作品</title>
     <link href="http://www.miw.cn/2018/10/12/2005-nian-qian-wang-zhan-zuo-pin/"/>
     <id>http://www.miw.cn/2018/10/12/2005-nian-qian-wang-zhan-zuo-pin/</id>
     <published>2018-10-12T14:15:04.000Z</published>
-    <updated>2018-10-12T15:18:19.142Z</updated>
+    <updated>2018-10-12T15:22:51.838Z</updated>
     
     <summary type="html">
     
