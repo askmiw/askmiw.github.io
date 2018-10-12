@@ -1,2 +1,7 @@
 /* Here is your custom css styles. */
-#articleContent img.img-item {height:150px;width:200px;}
+#articleContent img {
+    max-width: 100%;
+    height:150px!important;
+    width:200px!important;
+    cursor: pointer;
+}
