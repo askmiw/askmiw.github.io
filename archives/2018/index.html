@@ -521,7 +521,20 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 </footer>
 
 <div class="progress-bar"></div>
-
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 
 <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
