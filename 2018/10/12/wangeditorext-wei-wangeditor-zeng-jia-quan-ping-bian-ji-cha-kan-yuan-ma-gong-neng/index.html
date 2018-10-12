@@ -249,13 +249,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        wangEditorExt,为wangEditor增加全屏编辑,查看源码功能
                     </div>
                 </div>
             </div>
@@ -275,30 +275,17 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/java/" target="_blank">
-                    <span class="chip bg-color">java</span>
+                <a href="/tags/javascript/" target="_blank">
+                    <span class="chip bg-color">javascript</span>
                 </a>
                 
-                <a href="/tags/redis/" target="_blank">
-                    <span class="chip bg-color">redis</span>
-                </a>
-                
-                <a href="/tags/hexo/" target="_blank">
-                    <span class="chip bg-color">hexo</span>
+                <a href="/tags/wangEditor/" target="_blank">
+                    <span class="chip bg-color">wangEditor</span>
                 </a>
                 
             </div>
             
             <div class="post-info">
-                
-                <span class="post-cate">
-                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                    
-                    <a href="/categories/Java/" class="post-category" target="_blank">
-                        Java
-                    </a>
-                    
-                </span>
                 
 
                 <span class="post-date">
@@ -309,8 +296,10 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="这是第一篇-你好-蜜友"><a href="#这是第一篇-你好-蜜友" class="headerlink" title="这是第一篇, 你好, 蜜友!"></a>这是第一篇, 你好, 蜜友!</h2><p>欢迎来到蜜友工作室. 这是基于hexo 构造的网站.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">"你好, 蜜友!"</span>);</span><br></pre></td></tr></table></figure>
+                <h1 id="wangEditorExt"><a href="#wangEditorExt" class="headerlink" title="wangEditorExt"></a>wangEditorExt</h1><p>wangEditorExt,为wangEditor增加全屏编辑,查看源码功能</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * wangEditor扩展,增加全屏 查看源码功能</span></span><br><span class="line"><span class="comment"> * 传入均为 editor实例,非css选择器</span></span><br><span class="line"><span class="comment"> * 依赖jquery 如果是layui之类的需要在layui.use方法中使用</span></span><br><span class="line"><span class="comment"> * 全屏功能需要引入 wangEditor-fullscreen.css</span></span><br><span class="line"><span class="comment"> * @author mrzhou@miw.cn</span></span><br><span class="line"><span class="comment"> * @date 2018.8.30 am 10:00</span></span><br><span class="line"><span class="comment"> *       2018.9.18 pm 16:00 增加同页多编辑器支持</span></span><br><span class="line"><span class="comment"> * 使用方法:</span></span><br><span class="line"><span class="comment"> * E.fullscreen.init(editor);</span></span><br><span class="line"><span class="comment"> * E.viewSource.init(editor);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h3 id="附上一个测试样例"><a href="#附上一个测试样例" class="headerlink" title="附上一个测试样例"></a>附上一个测试样例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;zh-CN&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">	&lt;script src=&quot;https://cdn.bootcss.com/jquery/2.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div id=&quot;editor&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var E = window.wangEditor;</span><br><span class="line">var editor = new E(&apos;#editor&apos;);</span><br><span class="line">editor.create();</span><br><span class="line">E.fullscreen.init(editor);</span><br><span class="line">E.viewSource.init(editor);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/miws/wangEditorExt" target="_blank" rel="noopener">wangEditorExt项目</a><br><a href="https://github.com/wangfupeng1988/wangEditor" target="_blank" rel="noopener">wangEditor项目</a><br><a href="https://github.com/askmiw/simpleweb" target="_blank" rel="noopener">超级简单的JAVA mvc框架,全免配置</a></p>
 
             </div>
             <hr/>
@@ -449,7 +438,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://www.miw.cn" class="b-link-green">蜜友工作室</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/10/12/hello-world/" class="b-link-green">Hello World</a>
+                    <a href="/2018/10/12/wangeditorext-wei-wangeditor-zeng-jia-quan-ping-bian-ji-cha-kan-yuan-ma-gong-neng/" class="b-link-green">wangEditorExt,为wangEditor增加全屏编辑,查看源码功能</a>
                 </p>
             </div>
         </div>
@@ -466,8 +455,8 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2018/10/12/wangeditorext-wei-wangeditor-zeng-jia-quan-ping-bian-ji-cha-kan-yuan-ma-gong-neng/">
                     <div class="card-image">
@@ -482,9 +471,9 @@
                     <div class="summary">wangEditorExtwangEditorExt,为wangEditor增加全屏编辑,查看源码功能
 123456789101112/** * wangEditor扩展,增加全屏 查看源码功能 * 传入均为 editor实例,非css选择</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -493,6 +482,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -511,7 +501,7 @@
         
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">本篇</div>
+            <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
                 <a href="/2018/10/12/hello-world/">
                     <div class="card-image">
@@ -542,7 +532,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.miw.cn/"/>
-  <updated>2018-10-12T09:00:51.208Z</updated>
+  <updated>2018-10-12T09:08:46.903Z</updated>
   <id>http://www.miw.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>wangEditorExt,为wangEditor增加全屏编辑,查看源码功能</title>
+    <link href="http://www.miw.cn/2018/10/12/wangeditorext-wei-wangeditor-zeng-jia-quan-ping-bian-ji-cha-kan-yuan-ma-gong-neng/"/>
+    <id>http://www.miw.cn/2018/10/12/wangeditorext-wei-wangeditor-zeng-jia-quan-ping-bian-ji-cha-kan-yuan-ma-gong-neng/</id>
+    <published>2018-10-12T09:05:43.000Z</published>
+    <updated>2018-10-12T09:08:46.903Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;wangEditorExt&quot;&gt;&lt;a href=&quot;#wangEditorExt&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://www.miw.cn/tags/javascript/"/>
+    
+      <category term="wangEditor" scheme="http://www.miw.cn/tags/wangEditor/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
