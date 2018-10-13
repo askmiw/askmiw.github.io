@@ -40,9 +40,9 @@
       <category term="WEB" scheme="http://www.miw.cn/categories/%E4%BD%9C%E5%93%81/WEB/"/>
     
     
-      <category term="web" scheme="http://www.miw.cn/tags/web/"/>
-    
       <category term="java" scheme="http://www.miw.cn/tags/java/"/>
+    
+      <category term="web" scheme="http://www.miw.cn/tags/web/"/>
     
       <category term="servlet" scheme="http://www.miw.cn/tags/servlet/"/>
     
