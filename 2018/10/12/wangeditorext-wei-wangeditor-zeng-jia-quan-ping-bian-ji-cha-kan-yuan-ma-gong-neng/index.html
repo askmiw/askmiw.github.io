@@ -290,7 +290,11 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="../../../../categories/前端/" class="post-category" target="_blank">
+                    <a href="../../../../categories/作品/" class="post-category" target="_blank">
+                        作品
+                    </a>
+                    
+                    <a href="../../../../categories/作品/前端/" class="post-category" target="_blank">
                         前端
                     </a>
                     
@@ -305,10 +309,38 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="wangEditorExt"><a href="#wangEditorExt" class="headerlink" title="wangEditorExt"></a>wangEditorExt</h1><p>wangEditorExt,为wangEditor增加全屏编辑,查看源码功能</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * wangEditor扩展,增加全屏 查看源码功能</span></span><br><span class="line"><span class="comment"> * 传入均为 editor实例,非css选择器</span></span><br><span class="line"><span class="comment"> * 依赖jquery 如果是layui之类的需要在layui.use方法中使用</span></span><br><span class="line"><span class="comment"> * 全屏功能需要引入 wangEditor-fullscreen.css</span></span><br><span class="line"><span class="comment"> * @author mrzhou@miw.cn</span></span><br><span class="line"><span class="comment"> * @date 2018.8.30 am 10:00</span></span><br><span class="line"><span class="comment"> *       2018.9.18 pm 16:00 增加同页多编辑器支持</span></span><br><span class="line"><span class="comment"> * 使用方法:</span></span><br><span class="line"><span class="comment"> * E.fullscreen.init(editor);</span></span><br><span class="line"><span class="comment"> * E.viewSource.init(editor);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-<h3 id="附上一个测试样例"><a href="#附上一个测试样例" class="headerlink" title="附上一个测试样例"></a>附上一个测试样例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"editor"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> E = <span class="built_in">window</span>.wangEditor;</span></span><br><span class="line"><span class="actionscript"><span class="keyword">var</span> editor = <span class="keyword">new</span> E(<span class="string">'#editor'</span>);</span></span><br><span class="line"><span class="undefined">editor.create();</span></span><br><span class="line"><span class="undefined">E.fullscreen.init(editor);</span></span><br><span class="line"><span class="undefined">E.viewSource.init(editor);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/miws/wangEditorExt" target="_blank" rel="noopener">wangEditorExt项目</a><br><a href="https://github.com/wangfupeng1988/wangEditor" target="_blank" rel="noopener">wangEditor项目</a><br><a href="https://github.com/askmiw/simpleweb" target="_blank" rel="noopener">超级简单的JAVA mvc框架,全免配置</a></p>
+                <h1 id="wangEditorExt"><a href="#wangEditorExt" class="headerlink" title="wangEditorExt"></a>wangEditorExt</h1><p>wangEditor确实是一款比较轻巧的在线可视编辑器, 其实作为网页编辑器有这些功能足够了, 基本满足了在线编辑的需要, 但作为一个技术控, 有些东西它还不满足, 于是就增加全屏编辑, 查看源码功能, 在查看源码功能中同样可以进行编辑, 比如对图像大小的编辑等.</p>
+<pre><code>/**
+ * wangEditor扩展,增加全屏 查看源码功能
+ * 传入均为 editor实例,非css选择器
+ * 依赖jquery 如果是layui之类的需要在layui.use方法中使用
+ * 全屏功能需要引入 wangEditor-fullscreen.css
+ * @author mrzhou@miw.cn
+ * @date 2018.8.30 am 10:00
+ *       2018.9.18 pm 16:00 增加同页多编辑器支持
+ * 使用方法:
+ * E.fullscreen.init(editor);
+ * E.viewSource.init(editor);
+ */
+</code></pre><h3 id="附上一个测试样例"><a href="#附上一个测试样例" class="headerlink" title="附上一个测试样例"></a>附上一个测试样例</h3><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script src=&quot;https://cdn.bootcss.com/jquery/2.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;editor&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;script&gt;
+var E = window.wangEditor;
+var editor = new E(&#39;#editor&#39;);
+editor.create();
+E.fullscreen.init(editor);
+E.viewSource.init(editor);
+&lt;/script&gt;
+</code></pre><p><a href="https://github.com/miws/wangEditorExt" target="_blank" rel="noopener">wangEditorExt项目</a><br><a href="https://github.com/wangfupeng1988/wangEditor" target="_blank" rel="noopener">wangEditor项目</a><br><a href="https://github.com/askmiw/simpleweb" target="_blank" rel="noopener">超级简单的JAVA mvc框架,全免配置</a></p>
 
             </div>
             <hr/>
@@ -400,7 +432,7 @@
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close"><i class="fa fa-close"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <h4 class="reward-title">如果对你有帮助可以打赏</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs">
@@ -456,6 +488,28 @@
     
 
     
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Fri Oct 12 2018 17:05:43 GMT+0800',
+    owner: 'askmiw',
+    repo: 'askmiw.github.io',
+    oauth: {
+        client_id: '767e5ca2bd9dd3343eee',
+        client_secret: 'ab72d7658616b706d04c42a1d10fde35a14f4c67'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
+    
 
     
 
@@ -493,6 +547,10 @@
                                     作品
                                 </a>
                             
+                            <a href="../../../../categories/作品/WEB/" class="post-category" target="_blank">
+                                    WEB
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -528,7 +586,8 @@
                 </a>
                 <div class="card-content article-content">
                     <div class="summary">这是第一篇, 你好, 蜜友!欢迎来到蜜友工作室. 这是基于hexo 构造的网站.
-1System.out.println("你好, 蜜友!");
+System.out.println("你好, 蜜友!");
+
 </div>
                     <div class="publish-info">
                             <span class="publish-date">
@@ -538,8 +597,12 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="../../../../categories/Java/" class="post-category" target="_blank">
-                                    Java
+                            <a href="../../../../categories/软件设计/" class="post-category" target="_blank">
+                                    软件设计
+                                </a>
+                            
+                            <a href="../../../../categories/软件设计/JAVA/" class="post-category" target="_blank">
+                                    JAVA
                                 </a>
                             
                             
