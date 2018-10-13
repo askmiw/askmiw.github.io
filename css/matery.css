@@ -160,11 +160,11 @@ mark {
 }
 
 .bg-color {
-    background-color: #0f9d58 !important;
+    background-color: #783c7e !important;
 }
 
 .text-color {
-    color: #0f9d58 !important;
+    color: #783c7e !important;
 }
 
 /*头部导航栏样式*/
@@ -183,7 +183,7 @@ mark {
 }
 
 .progress-bar {
-    background-color: #0f9d58;
+    background-color: #783c7e;
     height: 4px;
     position: fixed;
     bottom: 0;
@@ -207,7 +207,9 @@ header nav .brand-span {
 header .brand-logo .logo-img {
     height: 45px;
     vertical-align: middle;
-    padding-bottom: 6px;
+    margin-top: -6px;
+    /*padding-bottom: 6px;*/
+    border-radius: 50%;
 }
 
 header .brand-logo .logo-span {
@@ -879,7 +881,7 @@ table tr:nth-child(2n), thead {
     left: 18px;
     height: 100%;
     width: 4px;
-    background: #0f9d58;
+    background: #783c7e;
 }
 
 @media only screen and (min-width: 900px) {
@@ -1290,8 +1292,8 @@ table tr:nth-child(2n), thead {
 
 .other-skills .chip:hover {
     color: #fff;
-    background-color: #0f9d58;
-    border: 1px solid #0f9d58;
+    background-color: #783c7e;
+    border: 1px solid #783c7e;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .25)
 }
 
