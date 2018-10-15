@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>JRebel 2018.1.6 注册服务搭建</title>
+      <link href="/2018/10/15/jrebel-2018-1-6-zhu-ce-fu-wu-da-jian/"/>
+      <url>/2018/10/15/jrebel-2018-1-6-zhu-ce-fu-wu-da-jian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="JRebel-2018-1-6-注册服务搭建"><a href="#JRebel-2018-1-6-注册服务搭建" class="headerlink" title="JRebel 2018.1.6 注册服务搭建"></a>JRebel 2018.1.6 注册服务搭建</h1><p>JRebel热部署功能使用起来确实很方便, 只是需要激活使用, 虽然有好多在线的激活服务地址, 但需要都可能被和谐掉, 也有可能被Jetbrain封掉, 不如自己架一个注册服务.</p><p>下载地址: <a href="https://download.csdn.net/download/miw__/10721048" target="_blank" rel="noopener">https://download.csdn.net/download/miw__/10721048</a></p><p>使用java -jar JRebelServer.jar 运行 可以自定义指定端口</p><img src="/2018/10/15/jrebel-2018-1-6-zhu-ce-fu-wu-da-jian/jrebelserver.png" title="jrebelserver.png">]]></content>
+      
+      
+      <categories>
+          
+          <category> JAVA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> JRebel </tag>
+            
+            <tag> 注册 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>2005-2010年网站作品</title>
       <link href="/2018/10/13/2005-2010-nian-wang-zhan-zuo-pin/"/>
       <url>/2018/10/13/2005-2010-nian-wang-zhan-zuo-pin/</url>
@@ -21,9 +48,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> web </tag>
+            
+            <tag> java </tag>
             
             <tag> servlet </tag>
             
