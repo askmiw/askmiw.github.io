@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.miw.cn/"/>
-  <updated>2018-10-15T04:03:15.417Z</updated>
+  <updated>2018-10-23T04:29:17.231Z</updated>
   <id>http://www.miw.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot+MyBatis中通用动态CRUDP的实现</title>
+    <link href="http://www.miw.cn/2018/10/23/springboot-mybatis-zhong-tong-yong-dong-tai-crudp-de-shi-xian/"/>
+    <id>http://www.miw.cn/2018/10/23/springboot-mybatis-zhong-tong-yong-dong-tai-crudp-de-shi-xian/</id>
+    <published>2018-10-23T04:13:11.000Z</published>
+    <updated>2018-10-23T04:29:17.231Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;SpringBoot-MyBatis中通用动态CRUDP的实现&quot;&gt;&lt;a href=&quot;#SpringBoot-MyBatis中通用动态CRUDP的实现&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="JAVA" scheme="http://www.miw.cn/categories/JAVA/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://www.miw.cn/tags/SpringBoot/"/>
+    
+      <category term="MyBatis" scheme="http://www.miw.cn/tags/MyBatis/"/>
+    
+  </entry>
   
   <entry>
     <title>JRebel 2018.1.6 注册服务搭建</title>
