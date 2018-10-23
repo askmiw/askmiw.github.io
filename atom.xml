@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.miw.cn/"/>
-  <updated>2018-10-23T04:29:17.231Z</updated>
+  <updated>2018-10-23T04:42:32.479Z</updated>
   <id>http://www.miw.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.miw.cn/2018/10/23/springboot-mybatis-zhong-tong-yong-dong-tai-crudp-de-shi-xian/"/>
     <id>http://www.miw.cn/2018/10/23/springboot-mybatis-zhong-tong-yong-dong-tai-crudp-de-shi-xian/</id>
     <published>2018-10-23T04:13:11.000Z</published>
-    <updated>2018-10-23T04:29:17.231Z</updated>
+    <updated>2018-10-23T04:42:32.479Z</updated>
     
     <summary type="html">
     
@@ -35,7 +35,9 @@
     
     </summary>
     
-      <category term="JAVA" scheme="http://www.miw.cn/categories/JAVA/"/>
+      <category term="软件设计" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="JAVA" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/JAVA/"/>
     
     
       <category term="SpringBoot" scheme="http://www.miw.cn/tags/SpringBoot/"/>
@@ -49,7 +51,7 @@
     <link href="http://www.miw.cn/2018/10/15/jrebel-2018-1-6-zhu-ce-fu-wu-da-jian/"/>
     <id>http://www.miw.cn/2018/10/15/jrebel-2018-1-6-zhu-ce-fu-wu-da-jian/</id>
     <published>2018-10-15T03:59:09.000Z</published>
-    <updated>2018-10-15T04:03:15.417Z</updated>
+    <updated>2018-10-23T04:42:43.849Z</updated>
     
     <summary type="html">
     
@@ -63,7 +65,9 @@
     
     </summary>
     
-      <category term="JAVA" scheme="http://www.miw.cn/categories/JAVA/"/>
+      <category term="软件设计" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="JAVA" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/JAVA/"/>
     
     
       <category term="java" scheme="http://www.miw.cn/tags/java/"/>
