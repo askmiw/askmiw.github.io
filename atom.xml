@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.miw.cn/"/>
-  <updated>2018-10-23T04:42:32.479Z</updated>
+  <updated>2018-10-25T05:09:19.807Z</updated>
   <id>http://www.miw.cn/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot+JdbcTemplate通用Mapper的实现</title>
+    <link href="http://www.miw.cn/2018/10/25/springboot-jdbctemplate-tong-yong-mapper-de-shi-xian/"/>
+    <id>http://www.miw.cn/2018/10/25/springboot-jdbctemplate-tong-yong-mapper-de-shi-xian/</id>
+    <published>2018-10-25T04:59:14.000Z</published>
+    <updated>2018-10-25T05:09:19.807Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;SpringBoot-JdbcTemplate通用Mapper的实现&quot;&gt;&lt;a href=&quot;#SpringBoot-JdbcTemplate通用Mapper的实现&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="软件设计" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="JAVA" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/JAVA/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://www.miw.cn/tags/SpringBoot/"/>
+    
+      <category term="JdbcTemplate" scheme="http://www.miw.cn/tags/JdbcTemplate/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot+MyBatis中通用动态CRUDP的实现</title>
