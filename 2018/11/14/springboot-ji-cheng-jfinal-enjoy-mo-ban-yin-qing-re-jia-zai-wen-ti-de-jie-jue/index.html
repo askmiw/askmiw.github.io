@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="java, javaweb, j2EE, android, 安卓, iOS, 苹果, spring, springboot, springMVC, hibernate, mybatis, javascript, 移动开发, 网站, 手机app, hexo-theme-matery">
-    <meta name="description" content="SpringBook集成Jfinal Enjoy模板引擎热加载问题的解决 - |SpringBook集成Jfinal Enjoy模板引擎热加载问题的解决Jfinal Enjoy模板引擎通过一段时间的使用, 感觉比free| 从上个世纪就迷恋上了编码的人. 做自己喜欢的事, 编码可以让自己忘却尘世的烦恼.">
+    <meta name="description" content="SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决 - |SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决Jfinal Enjoy模板引擎通过一段时间的使用, 感觉比free| 从上个世纪就迷恋上了编码的人. 做自己喜欢的事, 编码可以让自己忘却尘世的烦恼.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>SpringBook集成Jfinal Enjoy模板引擎热加载问题的解决 - 蜜友工作室</title>
+    <title>SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决 - 蜜友工作室</title>
     <link rel="icon" type="image/png" href="/medias/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -251,13 +251,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        SpringBook集成Jfinal Enjoy模板引擎热加载问题的解决
+                        SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决
                     </div>
                 </div>
             </div>
@@ -381,7 +381,7 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="SpringBook集成Jfinal-Enjoy模板引擎热加载问题的解决"><a href="#SpringBook集成Jfinal-Enjoy模板引擎热加载问题的解决" class="headerlink" title="SpringBook集成Jfinal Enjoy模板引擎热加载问题的解决"></a>SpringBook集成Jfinal Enjoy模板引擎热加载问题的解决</h2><p>Jfinal Enjoy模板引擎通过一段时间的使用, 感觉比freeMarker更方便, 与Jfinal的配置更是天衣无缝, 同时也可以在 SpringBoot中集成, 但在集成使用过程中还是有一些问题需要注意, 在这里列出, 以方便大家查阅. </p>
+                <h2 id="SpringBoot集成Jfinal-Enjoy模板引擎热加载问题的解决"><a href="#SpringBoot集成Jfinal-Enjoy模板引擎热加载问题的解决" class="headerlink" title="SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决"></a>SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决</h2><p>Jfinal Enjoy模板引擎通过一段时间的使用, 感觉比freeMarker更方便, 与Jfinal的配置更是天衣无缝, 同时也可以在 SpringBoot中集成, 但在集成使用过程中还是有一些问题需要注意, 在这里列出, 以方便大家查阅. </p>
 <h3 id="获取ContextPath的问题"><a href="#获取ContextPath的问题" class="headerlink" title="获取ContextPath的问题"></a>获取ContextPath的问题</h3><p>在任何一个网站系统中, 作为前台页面, 除非是写死的, 其实我们都需要知道Application运行的是什么目录, 否则引用路径就不正确了, 所以在我经手的项目中前面页面都会有一个root变量, 不管是js/css, 都需要, 在向服务器请求的方法中更是需要.<br>创建一个Enjoy配置类, 实现ApplicationListener<contextrefreshedevent>, 使用getEngine().addSharedObject(“root”, getServletContext().getContextPath());即可, 但在热加载的过程中会提示该对象已存在,并抛出一个异常, 导致Application无法正常运行下去, 其实那就给它加一个try来解决.</contextrefreshedevent></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>ynca<span class="token punctuation">.</span>conf<span class="token punctuation">;</span>
 
@@ -565,7 +565,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://www.miw.cn" class="b-link-green">蜜友工作室</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="" class="b-link-green">SpringBook集成Jfinal Enjoy模板引擎热加载问题的解决</a>
+                    <a href="" class="b-link-green">SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决</a>
                 </p>
             </div>
         </div>
@@ -611,13 +611,13 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="SpringBook集成Jfinal Enjoy模板引擎热加载问题的解决">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决">
                         
-                        <span class="card-title">SpringBook集成Jfinal Enjoy模板引擎热加载问题的解决</span>
+                        <span class="card-title">SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">SpringBook集成Jfinal Enjoy模板引擎热加载问题的解决Jfinal Enjoy模板引擎通过一段时间的使用, 感觉比freeMarker更方便, 与Jfinal的配置更是天衣无缝, 同时也可以在 SpringBoot中集成,</div>
+                    <div class="summary">SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决Jfinal Enjoy模板引擎通过一段时间的使用, 感觉比freeMarker更方便, 与Jfinal的配置更是天衣无缝, 同时也可以在 SpringBoot中集成,</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-14
@@ -718,7 +718,7 @@
         <div class="toc-widget">
             <h4>目录</h4>
             <div id="toc-content">
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SpringBook集成Jfinal-Enjoy模板引擎热加载问题的解决"><span class="post-toc-text">SpringBook集成Jfinal Enjoy模板引擎热加载问题的解决</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取ContextPath的问题"><span class="post-toc-text">获取ContextPath的问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于devTools热加载问题"><span class="post-toc-text">关于devTools热加载问题</span></a></li></ol></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SpringBoot集成Jfinal-Enjoy模板引擎热加载问题的解决"><span class="post-toc-text">SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取ContextPath的问题"><span class="post-toc-text">获取ContextPath的问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于devTools热加载问题"><span class="post-toc-text">关于devTools热加载问题</span></a></li></ol></li></ol>
             </div>
         </div>
     </div>

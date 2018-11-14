@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.miw.cn/"/>
-  <updated>2018-11-14T03:21:03.464Z</updated>
+  <updated>2018-11-14T03:27:31.562Z</updated>
   <id>http://www.miw.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>SpringBook集成Jfinal Enjoy模板引擎热加载问题的解决</title>
-    <link href="http://www.miw.cn/2018/11/14/springbook-ji-cheng-jfinal-enjoy-mo-ban-yin-qing-re-jia-zai-wen-ti-de-jie-jue/"/>
-    <id>http://www.miw.cn/2018/11/14/springbook-ji-cheng-jfinal-enjoy-mo-ban-yin-qing-re-jia-zai-wen-ti-de-jie-jue/</id>
+    <title>SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决</title>
+    <link href="http://www.miw.cn/2018/11/14/springboot-ji-cheng-jfinal-enjoy-mo-ban-yin-qing-re-jia-zai-wen-ti-de-jie-jue/"/>
+    <id>http://www.miw.cn/2018/11/14/springboot-ji-cheng-jfinal-enjoy-mo-ban-yin-qing-re-jia-zai-wen-ti-de-jie-jue/</id>
     <published>2018-11-14T03:01:03.000Z</published>
-    <updated>2018-11-14T03:21:03.464Z</updated>
+    <updated>2018-11-14T03:27:31.562Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;h2 id=&quot;SpringBook集成Jfinal-Enjoy模板引擎热加载问题的解决&quot;&gt;&lt;a href=&quot;#SpringBook集成Jfinal-Enjoy模板引擎热加载问题的解决&quot; class=&quot;headerlink&quot; title=&quot;SpringBook集成Jfinal
+          &lt;h2 id=&quot;SpringBoot集成Jfinal-Enjoy模板引擎热加载问题的解决&quot;&gt;&lt;a href=&quot;#SpringBoot集成Jfinal-Enjoy模板引擎热加载问题的解决&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot集成Jfinal
         
       
     
