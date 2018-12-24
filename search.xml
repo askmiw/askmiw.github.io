@@ -3,6 +3,35 @@
   
     
     <entry>
+      <title>利用mysql(Mariadb)系统信息生成数据字典</title>
+      <link href="/2018/12/24/li-yong-mysql-mariadb-xi-tong-xin-xi-sheng-cheng-shu-ju-zi-dian/"/>
+      <url>/2018/12/24/li-yong-mysql-mariadb-xi-tong-xin-xi-sheng-cheng-shu-ju-zi-dian/</url>
+      
+        <content type="html"><![CDATA[<h2 id="利用mysql-Mariadb-系统信息生成数据字典"><a href="#利用mysql-Mariadb-系统信息生成数据字典" class="headerlink" title="利用mysql(Mariadb)系统信息生成数据字典"></a>利用mysql(Mariadb)系统信息生成数据字典</h2><p>现在很多新手在做设计时并不是从正规流程来的, 可能是先完成了表的设计, 甚至是系统都开发完成了, 还没有数据库的相关文档, 那我们其实可以再反过来利用数据库的基础信息反向生成数据库字典文档, 可以使用以下语句, 得到你想的结果, 再导出到excel, 稍做排版即可满足了.</p><pre class=" language-sql"><code class="language-sql"><span class="token keyword">USE</span> information_schema<span class="token punctuation">;</span><span class="token keyword">select</span>     <span class="token number">c</span><span class="token punctuation">.</span>TABLE_NAME <span class="token string">'表名'</span><span class="token punctuation">,</span>     <span class="token number">c</span><span class="token punctuation">.</span>COLUMN_NAME <span class="token string">'字段名'</span><span class="token punctuation">,</span>    <span class="token number">c</span><span class="token punctuation">.</span>COLUMN_TYPE <span class="token string">'字段类型'</span><span class="token punctuation">,</span>     <span class="token number">c</span><span class="token punctuation">.</span>IS_NULLABLE <span class="token string">'允许为空'</span><span class="token punctuation">,</span>    <span class="token number">c</span><span class="token punctuation">.</span>EXTRA <span class="token string">'PK'</span><span class="token punctuation">,</span>     <span class="token number">c</span><span class="token punctuation">.</span>COLUMN_COMMENT <span class="token string">'字段说明'</span><span class="token keyword">from</span> <span class="token punctuation">`</span><span class="token keyword">COLUMNS</span><span class="token punctuation">`</span> <span class="token number">c</span><span class="token punctuation">,</span> <span class="token punctuation">`</span><span class="token keyword">TABLES</span><span class="token punctuation">`</span> t <span class="token keyword">where</span> <span class="token number">1</span><span class="token operator">=</span><span class="token number">1</span>    <span class="token operator">and</span> <span class="token number">c</span><span class="token punctuation">.</span>TABLE_SCHEMA <span class="token operator">=</span> t<span class="token punctuation">.</span>TABLE_SCHEMA     <span class="token operator">and</span> <span class="token number">c</span><span class="token punctuation">.</span>TABLE_NAME <span class="token operator">=</span> t<span class="token punctuation">.</span>TABLE_NAME    <span class="token operator">and</span> t<span class="token punctuation">.</span>TABLE_SCHEMA<span class="token operator">=</span><span class="token string">'数据库名'</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件设计 </category>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+            <tag> Mariadb </tag>
+            
+            <tag> 数据字典 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决</title>
       <link href="/2018/11/14/springboot-ji-cheng-jfinal-enjoy-mo-ban-yin-qing-re-jia-zai-wen-ti-de-jie-jue/"/>
       <url>/2018/11/14/springboot-ji-cheng-jfinal-enjoy-mo-ban-yin-qing-re-jia-zai-wen-ti-de-jie-jue/</url>

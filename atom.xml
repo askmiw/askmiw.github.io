@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.miw.cn/"/>
-  <updated>2018-11-14T03:27:31.562Z</updated>
+  <updated>2018-12-24T08:01:48.031Z</updated>
   <id>http://www.miw.cn/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用mysql(Mariadb)系统信息生成数据字典</title>
+    <link href="http://www.miw.cn/2018/12/24/li-yong-mysql-mariadb-xi-tong-xin-xi-sheng-cheng-shu-ju-zi-dian/"/>
+    <id>http://www.miw.cn/2018/12/24/li-yong-mysql-mariadb-xi-tong-xin-xi-sheng-cheng-shu-ju-zi-dian/</id>
+    <published>2018-12-24T07:55:21.000Z</published>
+    <updated>2018-12-24T08:01:48.031Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;利用mysql-Mariadb-系统信息生成数据字典&quot;&gt;&lt;a href=&quot;#利用mysql-Mariadb-系统信息生成数据字典&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="软件设计" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="数据库" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="mysql" scheme="http://www.miw.cn/tags/mysql/"/>
+    
+      <category term="Mariadb" scheme="http://www.miw.cn/tags/Mariadb/"/>
+    
+      <category term="数据字典" scheme="http://www.miw.cn/tags/%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决</title>

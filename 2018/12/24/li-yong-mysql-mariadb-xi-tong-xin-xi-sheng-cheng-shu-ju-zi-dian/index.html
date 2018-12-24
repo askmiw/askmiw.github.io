@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="java, javaweb, j2EE, android, 安卓, iOS, 苹果, spring, springboot, springMVC, hibernate, mybatis, javascript, 移动开发, 网站, 手机app, hexo-theme-matery">
-    <meta name="description" content="SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决 - |SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决Jfinal Enjoy模板引擎通过一段时间的使用, 感觉比free| 从上个世纪就迷恋上了编码的人. 做自己喜欢的事, 编码可以让自己忘却尘世的烦恼.">
+    <meta name="description" content="利用mysql(Mariadb)系统信息生成数据字典 - |利用mysql(Mariadb)系统信息生成数据字典现在很多新手在做设计时并不是从正规流程来的, 可能是先完成了表的设计, 甚至是系统都开发| 从上个世纪就迷恋上了编码的人. 做自己喜欢的事, 编码可以让自己忘却尘世的烦恼.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决 - 蜜友工作室</title>
+    <title>利用mysql(Mariadb)系统信息生成数据字典 - 蜜友工作室</title>
     <link rel="icon" type="image/png" href="/medias/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -251,13 +251,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决
+                        利用mysql(Mariadb)系统信息生成数据字典
                     </div>
                 </div>
             </div>
@@ -343,16 +343,16 @@
             
             <div class="article-tag">
                 
-                <a href="../../../../tags/SpringBoot/" target="_blank">
-                    <span class="chip bg-color">SpringBoot</span>
+                <a href="../../../../tags/mysql/" target="_blank">
+                    <span class="chip bg-color">mysql</span>
                 </a>
                 
-                <a href="../../../../tags/Jfinal/" target="_blank">
-                    <span class="chip bg-color">Jfinal</span>
+                <a href="../../../../tags/Mariadb/" target="_blank">
+                    <span class="chip bg-color">Mariadb</span>
                 </a>
                 
-                <a href="../../../../tags/Enjoy模板引擎/" target="_blank">
-                    <span class="chip bg-color">Enjoy模板引擎</span>
+                <a href="../../../../tags/数据字典/" target="_blank">
+                    <span class="chip bg-color">数据字典</span>
                 </a>
                 
             </div>
@@ -366,67 +366,36 @@
                         软件设计
                     </a>
                     
-                    <a href="../../../../categories/软件设计/JAVA/" class="post-category" target="_blank">
-                        JAVA
+                    <a href="../../../../categories/软件设计/数据库/" class="post-category" target="_blank">
+                        数据库
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-11-14
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-24
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="SpringBoot集成Jfinal-Enjoy模板引擎热加载问题的解决"><a href="#SpringBoot集成Jfinal-Enjoy模板引擎热加载问题的解决" class="headerlink" title="SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决"></a>SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决</h2><p>Jfinal Enjoy模板引擎通过一段时间的使用, 感觉比freeMarker更方便, 与Jfinal的配置更是天衣无缝, 同时也可以在 SpringBoot中集成, 但在集成使用过程中还是有一些问题需要注意, 在这里列出, 以方便大家查阅. </p>
-<h3 id="获取ContextPath的问题"><a href="#获取ContextPath的问题" class="headerlink" title="获取ContextPath的问题"></a>获取ContextPath的问题</h3><p>在任何一个网站系统中, 作为前台页面, 除非是写死的, 其实我们都需要知道Application运行的是什么目录, 否则引用路径就不正确了, 所以在我经手的项目中前面页面都会有一个root变量, 不管是js/css, 都需要, 在向服务器请求的方法中更是需要.<br>创建一个Enjoy配置类, 实现ApplicationListener<contextrefreshedevent>, 使用getEngine().addSharedObject(“root”, getServletContext().getContextPath());即可, 但在热加载的过程中会提示该对象已存在,并抛出一个异常, 导致Application无法正常运行下去, 其实那就给它加一个try来解决.</contextrefreshedevent></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>ynca<span class="token punctuation">.</span>conf<span class="token punctuation">;</span>
+                <h2 id="利用mysql-Mariadb-系统信息生成数据字典"><a href="#利用mysql-Mariadb-系统信息生成数据字典" class="headerlink" title="利用mysql(Mariadb)系统信息生成数据字典"></a>利用mysql(Mariadb)系统信息生成数据字典</h2><p>现在很多新手在做设计时并不是从正规流程来的, 可能是先完成了表的设计, 甚至是系统都开发完成了, 还没有数据库的相关文档, 那我们其实可以再反过来利用数据库的基础信息反向生成数据库字典文档, 可以使用以下语句, 得到你想的结果, 再导出到excel, 稍做排版即可满足了.</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">USE</span> information_schema<span class="token punctuation">;</span>
+<span class="token keyword">select</span> 
+    <span class="token number">c</span><span class="token punctuation">.</span>TABLE_NAME <span class="token string">'表名'</span><span class="token punctuation">,</span> 
+    <span class="token number">c</span><span class="token punctuation">.</span>COLUMN_NAME <span class="token string">'字段名'</span><span class="token punctuation">,</span>
+    <span class="token number">c</span><span class="token punctuation">.</span>COLUMN_TYPE <span class="token string">'字段类型'</span><span class="token punctuation">,</span> 
+    <span class="token number">c</span><span class="token punctuation">.</span>IS_NULLABLE <span class="token string">'允许为空'</span><span class="token punctuation">,</span>
+    <span class="token number">c</span><span class="token punctuation">.</span>EXTRA <span class="token string">'PK'</span><span class="token punctuation">,</span> 
+    <span class="token number">c</span><span class="token punctuation">.</span>COLUMN_COMMENT <span class="token string">'字段说明'</span>
+<span class="token keyword">from</span> <span class="token punctuation">`</span><span class="token keyword">COLUMNS</span><span class="token punctuation">`</span> <span class="token number">c</span><span class="token punctuation">,</span> <span class="token punctuation">`</span><span class="token keyword">TABLES</span><span class="token punctuation">`</span> t 
+<span class="token keyword">where</span> <span class="token number">1</span><span class="token operator">=</span><span class="token number">1</span>
+    <span class="token operator">and</span> <span class="token number">c</span><span class="token punctuation">.</span>TABLE_SCHEMA <span class="token operator">=</span> t<span class="token punctuation">.</span>TABLE_SCHEMA 
+    <span class="token operator">and</span> <span class="token number">c</span><span class="token punctuation">.</span>TABLE_NAME <span class="token operator">=</span> t<span class="token punctuation">.</span>TABLE_NAME
+    <span class="token operator">and</span> t<span class="token punctuation">.</span>TABLE_SCHEMA<span class="token operator">=</span><span class="token string">'数据库名'</span><span class="token punctuation">;</span>
 
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>ApplicationListener<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Bean<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Configuration<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>event<span class="token punctuation">.</span>ContextRefreshedEvent<span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>jfinal<span class="token punctuation">.</span>template<span class="token punctuation">.</span>ext<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>JFinalViewResolver<span class="token punctuation">;</span>
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>jfinal<span class="token punctuation">.</span>template<span class="token punctuation">.</span>source<span class="token punctuation">.</span>ClassPathSourceFactory<span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">/**
- * Jfinal Enjoy模板支持
- * @ClassName: EnjoyConf
- * @author mrzhou@miw.cn&lt;br>
- * www.miw.cn&lt;br>
- * Nov 13, 2018 12:55:01 PM&lt;br>
- */</span>
-<span class="token annotation punctuation">@Configuration</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">EnjoyConf</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"jfinalViewResolver"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> ViewResolver <span class="token function">getJFinalViewResolver</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        ViewResolver viewResolver <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ViewResolver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        viewResolver<span class="token punctuation">.</span><span class="token function">setDevMode</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        viewResolver<span class="token punctuation">.</span><span class="token function">setSourceFactory</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ClassPathSourceFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        JFinalViewResolver<span class="token punctuation">.</span>engine<span class="token punctuation">.</span><span class="token function">setBaseTemplatePath</span><span class="token punctuation">(</span><span class="token string">"/templates/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        viewResolver<span class="token punctuation">.</span><span class="token function">setSuffix</span><span class="token punctuation">(</span><span class="token string">".html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        viewResolver<span class="token punctuation">.</span><span class="token function">setContentType</span><span class="token punctuation">(</span><span class="token string">"text/html;charset=UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        viewResolver<span class="token punctuation">.</span><span class="token function">setOrder</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> viewResolver<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ViewResolver</span> <span class="token keyword">extends</span> <span class="token class-name">JFinalViewResolver</span> <span class="token keyword">implements</span> <span class="token class-name">ApplicationListener</span><span class="token operator">&lt;</span>ContextRefreshedEvent<span class="token operator">></span> <span class="token punctuation">{</span>
-        <span class="token annotation punctuation">@Override</span>
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onApplicationEvent</span><span class="token punctuation">(</span>ContextRefreshedEvent event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">try</span> <span class="token punctuation">{</span>
-                <span class="token function">getEngine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addSharedObject</span><span class="token punctuation">(</span><span class="token string">"root"</span><span class="token punctuation">,</span> <span class="token function">getServletContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getContextPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-</code></pre>
-<h3 id="关于devTools热加载问题"><a href="#关于devTools热加载问题" class="headerlink" title="关于devTools热加载问题"></a>关于devTools热加载问题</h3><p>再一个修改了代码或者页面后, devtools会进行热载, 重新刷新页面, 结果又出错了, object is not an instance of declaring class. 原因是 模板引擎没有被重新热加载, 这是devtools的加载机制引起的, 解决方法: 在src/main/resources目录下面创建META-INF文件夹，然后创建spring-devtools.properties文件，文件里面的内容如下即可：</p>
-<pre class=" language-text"><code class="language-text">restart.include.thirdparty=/enjoy-3.4.jar
 </code></pre>
 
             </div>
@@ -565,7 +534,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://www.miw.cn" class="b-link-green">蜜友工作室</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="" class="b-link-green">SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决</a>
+                    <a href="" class="b-link-green">利用mysql(Mariadb)系统信息生成数据字典</a>
                 </p>
             </div>
         </div>
@@ -587,7 +556,7 @@
         repo: 'askmiw.github.io',
         owner: 'askmiw',
         admin: "miws",
-        id: '2018-11-14T11-01-03',
+        id: '2018-12-24T15-55-21',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -604,10 +573,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="../../../12/24/li-yong-mysql-mariadb-xi-tong-xin-xi-sheng-cheng-shu-ju-zi-dian/">
+                <a href="">
                     <div class="card-image">
                         
                         
@@ -619,9 +588,9 @@
                 <div class="card-content article-content">
                     <div class="summary">利用mysql(Mariadb)系统信息生成数据字典现在很多新手在做设计时并不是从正规流程来的, 可能是先完成了表的设计, 甚至是系统都开发完成了, 还没有数据库的相关文档, 那我们其实可以再反过来利用数据库的基础信息反向生成数据库字典文档</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -638,6 +607,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -662,20 +632,20 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="../../../10/25/springboot-jdbctemplate-tong-yong-mapper-de-shi-xian/">
+                <a href="../../../11/14/springboot-ji-cheng-jfinal-enjoy-mo-ban-yin-qing-re-jia-zai-wen-ti-de-jie-jue/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="SpringBoot+JdbcTemplate通用Mapper的实现">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决">
                         
-                        <span class="card-title">SpringBoot+JdbcTemplate通用Mapper的实现</span>
+                        <span class="card-title">SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">SpringBoot+JdbcTemplate通用Mapper的实现就我个人而言, 使用某个框架, 还是建议尽是只使用框架原生提供的方法来完成相关的操作, 这样从各方面来说应该都是性能最优的. 代码也应该是最好阅读和理解的. 这里还用上一篇</div>
+                    <div class="summary">SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决Jfinal Enjoy模板引擎通过一段时间的使用, 感觉比freeMarker更方便, 与Jfinal的配置更是天衣无缝, 同时也可以在 SpringBoot中集成,</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-25
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-14
                             </span>
                         <span class="publish-author">
                             
@@ -700,8 +670,12 @@
                         <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
-                    <a href="../../../../tags/JdbcTemplate/" target="_blank">
-                        <span class="chip bg-color">JdbcTemplate</span>
+                    <a href="../../../../tags/Jfinal/" target="_blank">
+                        <span class="chip bg-color">Jfinal</span>
+                    </a>
+                    
+                    <a href="../../../../tags/Enjoy模板引擎/" target="_blank">
+                        <span class="chip bg-color">Enjoy模板引擎</span>
                     </a>
                     
                 </div>
@@ -717,7 +691,7 @@
         <div class="toc-widget">
             <h4>目录</h4>
             <div id="toc-content">
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SpringBoot集成Jfinal-Enjoy模板引擎热加载问题的解决"><span class="post-toc-text">SpringBoot集成Jfinal Enjoy模板引擎热加载问题的解决</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取ContextPath的问题"><span class="post-toc-text">获取ContextPath的问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于devTools热加载问题"><span class="post-toc-text">关于devTools热加载问题</span></a></li></ol></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#利用mysql-Mariadb-系统信息生成数据字典"><span class="post-toc-text">利用mysql(Mariadb)系统信息生成数据字典</span></a></li></ol>
             </div>
         </div>
     </div>
