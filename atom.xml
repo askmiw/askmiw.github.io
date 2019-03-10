@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.miw.cn/"/>
-  <updated>2018-12-24T08:01:48.031Z</updated>
+  <updated>2019-03-10T01:51:55.375Z</updated>
   <id>http://www.miw.cn/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2019年做点什么呢？</title>
+    <link href="http://www.miw.cn/2019/03/10/2019-nian-zuo-dian-shi-me-ni/"/>
+    <id>http://www.miw.cn/2019/03/10/2019-nian-zuo-dian-shi-me-ni/</id>
+    <published>2019-03-10T01:47:46.000Z</published>
+    <updated>2019-03-10T01:51:55.375Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;2019年做点什么呢？&quot;&gt;&lt;a href=&quot;#2019年做点什么呢？&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="软件设计" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="数据库" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="随笔" scheme="http://www.miw.cn/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>利用mysql(Mariadb)系统信息生成数据字典</title>
     <link href="http://www.miw.cn/2018/12/24/li-yong-mysql-mariadb-xi-tong-xin-xi-sheng-cheng-shu-ju-zi-dian/"/>
     <id>http://www.miw.cn/2018/12/24/li-yong-mysql-mariadb-xi-tong-xin-xi-sheng-cheng-shu-ju-zi-dian/</id>
     <published>2018-12-24T07:55:21.000Z</published>
-    <updated>2018-12-24T08:01:48.031Z</updated>
+    <updated>2018-12-24T08:01:48.000Z</updated>
     
     <summary type="html">
     
@@ -53,7 +81,7 @@
     <link href="http://www.miw.cn/2018/11/14/springboot-ji-cheng-jfinal-enjoy-mo-ban-yin-qing-re-jia-zai-wen-ti-de-jie-jue/"/>
     <id>http://www.miw.cn/2018/11/14/springboot-ji-cheng-jfinal-enjoy-mo-ban-yin-qing-re-jia-zai-wen-ti-de-jie-jue/</id>
     <published>2018-11-14T03:01:03.000Z</published>
-    <updated>2018-11-14T03:27:31.562Z</updated>
+    <updated>2018-11-14T03:27:31.000Z</updated>
     
     <summary type="html">
     
@@ -85,7 +113,7 @@
     <link href="http://www.miw.cn/2018/10/25/springboot-jdbctemplate-tong-yong-mapper-de-shi-xian/"/>
     <id>http://www.miw.cn/2018/10/25/springboot-jdbctemplate-tong-yong-mapper-de-shi-xian/</id>
     <published>2018-10-25T04:59:14.000Z</published>
-    <updated>2018-10-25T06:08:44.380Z</updated>
+    <updated>2018-10-25T06:08:44.000Z</updated>
     
     <summary type="html">
     
@@ -115,7 +143,7 @@
     <link href="http://www.miw.cn/2018/10/23/springboot-mybatis-zhong-tong-yong-dong-tai-crudp-de-shi-xian/"/>
     <id>http://www.miw.cn/2018/10/23/springboot-mybatis-zhong-tong-yong-dong-tai-crudp-de-shi-xian/</id>
     <published>2018-10-23T04:13:11.000Z</published>
-    <updated>2018-10-23T04:42:32.479Z</updated>
+    <updated>2018-10-23T04:42:32.000Z</updated>
     
     <summary type="html">
     
@@ -145,7 +173,7 @@
     <link href="http://www.miw.cn/2018/10/15/jrebel-2018-1-6-zhu-ce-fu-wu-da-jian/"/>
     <id>http://www.miw.cn/2018/10/15/jrebel-2018-1-6-zhu-ce-fu-wu-da-jian/</id>
     <published>2018-10-15T03:59:09.000Z</published>
-    <updated>2018-10-23T04:42:43.849Z</updated>
+    <updated>2018-10-23T04:42:43.000Z</updated>
     
     <summary type="html">
     
@@ -177,7 +205,7 @@
     <link href="http://www.miw.cn/2018/10/13/2005-2010-nian-wang-zhan-zuo-pin/"/>
     <id>http://www.miw.cn/2018/10/13/2005-2010-nian-wang-zhan-zuo-pin/</id>
     <published>2018-10-12T16:12:13.000Z</published>
-    <updated>2018-10-13T04:03:29.367Z</updated>
+    <updated>2018-10-13T04:03:29.000Z</updated>
     
     <summary type="html">
     
@@ -211,7 +239,7 @@
     <link href="http://www.miw.cn/2018/10/12/2005-nian-qian-wang-zhan-zuo-pin/"/>
     <id>http://www.miw.cn/2018/10/12/2005-nian-qian-wang-zhan-zuo-pin/</id>
     <published>2018-10-12T14:15:04.000Z</published>
-    <updated>2018-10-13T04:03:12.450Z</updated>
+    <updated>2018-10-13T04:03:12.000Z</updated>
     
     <summary type="html">
     
@@ -241,7 +269,7 @@
     <link href="http://www.miw.cn/2018/10/12/wangeditorext-wei-wangeditor-zeng-jia-quan-ping-bian-ji-cha-kan-yuan-ma-gong-neng/"/>
     <id>http://www.miw.cn/2018/10/12/wangeditorext-wei-wangeditor-zeng-jia-quan-ping-bian-ji-cha-kan-yuan-ma-gong-neng/</id>
     <published>2018-10-12T09:05:43.000Z</published>
-    <updated>2018-10-13T04:12:38.470Z</updated>
+    <updated>2018-10-13T04:12:38.000Z</updated>
     
     <summary type="html">
     
@@ -271,7 +299,7 @@
     <link href="http://www.miw.cn/2018/10/12/hello-world/"/>
     <id>http://www.miw.cn/2018/10/12/hello-world/</id>
     <published>2018-10-12T05:14:00.000Z</published>
-    <updated>2018-10-13T04:02:42.638Z</updated>
+    <updated>2018-10-13T04:02:42.000Z</updated>
     
     <summary type="html">
     
