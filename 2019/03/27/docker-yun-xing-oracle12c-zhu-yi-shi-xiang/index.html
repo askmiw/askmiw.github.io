@@ -400,7 +400,7 @@ SQL>ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;
 SQL>alter user SYSTEM account unlock;
 SQL>alter user system identified by system;
 </code></pre>
-<h3 id="其他电脑访问oracle"><a href="#其他电脑访问oracle" class="headerlink" title="其他电脑访问oracle"></a>其他电脑访问oracle</h3><p>如果你的系统防火墙开着，那需要将19000和1521开放。回到宿主机，执行防火墙命令。</p>
+<h3 id="其他电脑访问oracle"><a href="#其他电脑访问oracle" class="headerlink" title="其他电脑访问oracle"></a>其他电脑访问oracle</h3><p>如果你的系统防火墙开着，那需要将19000和1521开放。回到宿主机，执行防火墙命令。<br>oracle-12c 数据库sid: xe, 如果你没有修改密码，system默认密码为oracle。</p>
 <pre class=" language-shell"><code class="language-shell">firewall-cmd --permanent --zone=public --add-port=19000/tcp
 firewall-cmd --permanent --zone=public --add-port=1521/tcp
 firewall-cmd --reload
