@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>docker运行oracle12c注意事项</title>
+      <link href="/2019/03/27/docker-yun-xing-oracle12c-zhu-yi-shi-xiang/"/>
+      <url>/2019/03/27/docker-yun-xing-oracle12c-zhu-yi-shi-xiang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="docker运行oracle12c注意事项"><a href="#docker运行oracle12c注意事项" class="headerlink" title="docker运行oracle12c注意事项"></a>docker运行oracle12c注意事项</h2><p>docker的安装就不说了，这里主要说在docker中运行oracle的事情。首先oracle映像本身比较大，近2.8G,所以你的磁盘空间一定要够，再有运行时还需要大约7G的空间，所以空间要足够，再有是内存，至少需要2G。</p><h3 id="获取oracle映像"><a href="#获取oracle映像" class="headerlink" title="获取oracle映像"></a>获取oracle映像</h3><pre class=" language-shell"><code class="language-shell">docker pull registry.docker-cn.com/sath89/oracle-12c docker images</code></pre><h3 id="为启动作准备"><a href="#为启动作准备" class="headerlink" title="为启动作准备"></a>为启动作准备</h3><p>oracle映像中的空间是不够安装数据库，需要宿主机的空间，所以需要建立一个目录来放数据库文件。并且需要修改owner，否则启动可能会失败。</p><pre class=" language-shell"><code class="language-shell">mkdir /data/oraclechown -R 1001:1001 /data/oracle</code></pre><h3 id="启动映像"><a href="#启动映像" class="headerlink" title="启动映像"></a>启动映像</h3><p>第一次启动过程会比较长，所以需要监控是否启动完成，或者启动过程中是否有错。这里oracle的web管理端口被制作到8080，将宿主机的19000映射到8080，毕竟8080还需要留给TOMCAT,1521必然是需要映射出来的。</p><pre class=" language-shell"><code class="language-shell">docker run -d -p 19000:8080 -p 1521:1521 -v /data/oracle:/u01/app/oracle --name oracle12c ee3351d51185docker logs -f oracle12c</code></pre><h3 id="修改权限及密码"><a href="#修改权限及密码" class="headerlink" title="修改权限及密码"></a>修改权限及密码</h3><p>这个映像毕竟制作时间有点长，用户密码早又过期，所以需要修改。</p><pre class=" language-shell"><code class="language-shell">docker exec -it oracle12c /bin/bash </code></pre><p>登录映像后，切换到oracle用户，然后登录oracle。</p><pre class=" language-shell"><code class="language-shell">su oracle$ORACLE_HOME/bin/sqlplus / as sysdbaSQL>ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;SQL>alter user SYSTEM account unlock;SQL>alter user system identified by system;</code></pre><h3 id="其他电脑访问oracle"><a href="#其他电脑访问oracle" class="headerlink" title="其他电脑访问oracle"></a>其他电脑访问oracle</h3><p>如果你的系统防火墙开着，那需要将19000和1521开放。回到宿主机，执行防火墙命令。</p><pre class=" language-shell"><code class="language-shell">firewall-cmd --permanent --zone=public --add-port=19000/tcpfirewall-cmd --permanent --zone=public --add-port=1521/tcpfirewall-cmd --reload</code></pre><p>搞定了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> 数据库 </tag>
+            
+            <tag> oracle </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>2019年做点什么呢？</title>
       <link href="/2019/03/10/2019-nian-zuo-dian-shi-me-ni/"/>
       <url>/2019/03/10/2019-nian-zuo-dian-shi-me-ni/</url>

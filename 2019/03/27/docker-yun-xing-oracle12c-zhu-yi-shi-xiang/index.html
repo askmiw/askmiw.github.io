@@ -6,8 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="java, javaweb, j2EE, android, 安卓, iOS, 苹果, spring, springboot, springMVC, hibernate, mybatis, javascript, 移动开发, 网站, 手机app, hexo-theme-matery">
-    <meta name="description" content="2019年做点什么呢？ - |2019年做点什么呢？新年过后，感觉有些迷茫，2019年应该做点什么呢？
-| 从上个世纪就迷恋上了编码的人. 做自己喜欢的事, 编码可以让自己忘却尘世的烦恼.">
+    <meta name="description" content="docker运行oracle12c注意事项 - |docker运行oracle12c注意事项docker的安装就不说了，这里主要说在docker中运行oracle的事情。首先oracle映像| 从上个世纪就迷恋上了编码的人. 做自己喜欢的事, 编码可以让自己忘却尘世的烦恼.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>2019年做点什么呢？ - 蜜友工作室</title>
+    <title>docker运行oracle12c注意事项 - 蜜友工作室</title>
     <link rel="icon" type="image/png" href="/medias/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -252,13 +251,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        2019年做点什么呢？
+                        docker运行oracle12c注意事项
                     </div>
                 </div>
             </div>
@@ -344,8 +343,16 @@
             
             <div class="article-tag">
                 
-                <a href="../../../../tags/随笔/" target="_blank">
-                    <span class="chip bg-color">随笔</span>
+                <a href="../../../../tags/docker/" target="_blank">
+                    <span class="chip bg-color">docker</span>
+                </a>
+                
+                <a href="../../../../tags/数据库/" target="_blank">
+                    <span class="chip bg-color">数据库</span>
+                </a>
+                
+                <a href="../../../../tags/oracle/" target="_blank">
+                    <span class="chip bg-color">oracle</span>
                 </a>
                 
             </div>
@@ -355,11 +362,7 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="../../../../categories/软件设计/" class="post-category" target="_blank">
-                        软件设计
-                    </a>
-                    
-                    <a href="../../../../categories/软件设计/数据库/" class="post-category" target="_blank">
+                    <a href="../../../../categories/数据库/" class="post-category" target="_blank">
                         数据库
                     </a>
                     
@@ -367,14 +370,42 @@
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-03-10
+                    <i class="fa fa-clock-o fa-fw"></i>2019-03-27
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="2019年做点什么呢？"><a href="#2019年做点什么呢？" class="headerlink" title="2019年做点什么呢？"></a>2019年做点什么呢？</h2><p>新年过后，感觉有些迷茫，2019年应该做点什么呢？</p>
+                <h2 id="docker运行oracle12c注意事项"><a href="#docker运行oracle12c注意事项" class="headerlink" title="docker运行oracle12c注意事项"></a>docker运行oracle12c注意事项</h2><p>docker的安装就不说了，这里主要说在docker中运行oracle的事情。首先oracle映像本身比较大，近2.8G,所以你的磁盘空间一定要够，再有运行时还需要大约7G的空间，所以空间要足够，再有是内存，至少需要2G。</p>
+<h3 id="获取oracle映像"><a href="#获取oracle映像" class="headerlink" title="获取oracle映像"></a>获取oracle映像</h3><pre class=" language-shell"><code class="language-shell">docker pull registry.docker-cn.com/sath89/oracle-12c 
+docker images
+</code></pre>
+<h3 id="为启动作准备"><a href="#为启动作准备" class="headerlink" title="为启动作准备"></a>为启动作准备</h3><p>oracle映像中的空间是不够安装数据库，需要宿主机的空间，所以需要建立一个目录来放数据库文件。并且需要修改owner，否则启动可能会失败。</p>
+<pre class=" language-shell"><code class="language-shell">mkdir /data/oracle
+chown -R 1001:1001 /data/oracle
+</code></pre>
+<h3 id="启动映像"><a href="#启动映像" class="headerlink" title="启动映像"></a>启动映像</h3><p>第一次启动过程会比较长，所以需要监控是否启动完成，或者启动过程中是否有错。这里oracle的web管理端口被制作到8080，将宿主机的19000映射到8080，毕竟8080还需要留给TOMCAT,1521必然是需要映射出来的。</p>
+<pre class=" language-shell"><code class="language-shell">docker run -d -p 19000:8080 -p 1521:1521 -v /data/oracle:/u01/app/oracle --name oracle12c ee3351d51185
+docker logs -f oracle12c
+</code></pre>
+<h3 id="修改权限及密码"><a href="#修改权限及密码" class="headerlink" title="修改权限及密码"></a>修改权限及密码</h3><p>这个映像毕竟制作时间有点长，用户密码早又过期，所以需要修改。</p>
+<pre class=" language-shell"><code class="language-shell">docker exec -it oracle12c /bin/bash 
+</code></pre>
+<p>登录映像后，切换到oracle用户，然后登录oracle。</p>
+<pre class=" language-shell"><code class="language-shell">su oracle
+$ORACLE_HOME/bin/sqlplus / as sysdba
+
+SQL>ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;
+SQL>alter user SYSTEM account unlock;
+SQL>alter user system identified by system;
+</code></pre>
+<h3 id="其他电脑访问oracle"><a href="#其他电脑访问oracle" class="headerlink" title="其他电脑访问oracle"></a>其他电脑访问oracle</h3><p>如果你的系统防火墙开着，那需要将19000和1521开放。回到宿主机，执行防火墙命令。</p>
+<pre class=" language-shell"><code class="language-shell">firewall-cmd --permanent --zone=public --add-port=19000/tcp
+firewall-cmd --permanent --zone=public --add-port=1521/tcp
+firewall-cmd --reload
+</code></pre>
+<p>搞定了。</p>
 
             </div>
             <hr/>
@@ -512,7 +543,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://www.miw.cn" class="b-link-green">蜜友工作室</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="" class="b-link-green">2019年做点什么呢？</a>
+                    <a href="" class="b-link-green">docker运行oracle12c注意事项</a>
                 </p>
             </div>
         </div>
@@ -534,7 +565,7 @@
         repo: 'askmiw.github.io',
         owner: 'askmiw',
         admin: "miws",
-        id: '2019-03-10T09-47-46',
+        id: '2019-03-27T13-42-34',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -551,10 +582,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="../../27/docker-yun-xing-oracle12c-zhu-yi-shi-xiang/">
+                <a href="">
                     <div class="card-image">
                         
                         
@@ -566,9 +597,9 @@
                 <div class="card-content article-content">
                     <div class="summary">docker运行oracle12c注意事项docker的安装就不说了，这里主要说在docker中运行oracle的事情。首先oracle映像本身比较大，近2.8G,所以你的磁盘空间一定要够，再有运行时还需要大约7G的空间，所以空间要足够，再</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -581,6 +612,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -605,20 +637,21 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="../../../../2018/12/24/li-yong-mysql-mariadb-xi-tong-xin-xi-sheng-cheng-shu-ju-zi-dian/">
+                <a href="../../10/2019-nian-zuo-dian-shi-me-ni/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="利用mysql(Mariadb)系统信息生成数据字典">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="2019年做点什么呢？">
                         
-                        <span class="card-title">利用mysql(Mariadb)系统信息生成数据字典</span>
+                        <span class="card-title">2019年做点什么呢？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">利用mysql(Mariadb)系统信息生成数据字典现在很多新手在做设计时并不是从正规流程来的, 可能是先完成了表的设计, 甚至是系统都开发完成了, 还没有数据库的相关文档, 那我们其实可以再反过来利用数据库的基础信息反向生成数据库字典文档</div>
+                    <div class="summary">2019年做点什么呢？新年过后，感觉有些迷茫，2019年应该做点什么呢？
+</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-10
                             </span>
                         <span class="publish-author">
                             
@@ -639,16 +672,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="../../../../tags/mysql/" target="_blank">
-                        <span class="chip bg-color">mysql</span>
-                    </a>
-                    
-                    <a href="../../../../tags/Mariadb/" target="_blank">
-                        <span class="chip bg-color">Mariadb</span>
-                    </a>
-                    
-                    <a href="../../../../tags/数据字典/" target="_blank">
-                        <span class="chip bg-color">数据字典</span>
+                    <a href="../../../../tags/随笔/" target="_blank">
+                        <span class="chip bg-color">随笔</span>
                     </a>
                     
                 </div>
@@ -664,7 +689,7 @@
         <div class="toc-widget">
             <h4>目录</h4>
             <div id="toc-content">
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2019年做点什么呢？"><span class="post-toc-text">2019年做点什么呢？</span></a></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#docker运行oracle12c注意事项"><span class="post-toc-text">docker运行oracle12c注意事项</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取oracle映像"><span class="post-toc-text">获取oracle映像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为启动作准备"><span class="post-toc-text">为启动作准备</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启动映像"><span class="post-toc-text">启动映像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改权限及密码"><span class="post-toc-text">修改权限及密码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他电脑访问oracle"><span class="post-toc-text">其他电脑访问oracle</span></a></li></ol></li></ol>
             </div>
         </div>
     </div>
