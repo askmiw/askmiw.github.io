@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.miw.cn/"/>
-  <updated>2019-03-27T06:08:17.139Z</updated>
+  <updated>2019-04-17T05:14:19.607Z</updated>
   <id>http://www.miw.cn/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nginx泛域名http(80)强制跳转https(443)</title>
+    <link href="http://www.miw.cn/2019/04/17/nginx-fan-yu-ming-http-80-qiang-zhi-tiao-zhuan-https-443/"/>
+    <id>http://www.miw.cn/2019/04/17/nginx-fan-yu-ming-http-80-qiang-zhi-tiao-zhuan-https-443/</id>
+    <published>2019-04-17T04:30:05.000Z</published>
+    <updated>2019-04-17T05:14:19.607Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;nginx泛域名http-80-强制跳转https-443&quot;&gt;&lt;a href=&quot;#nginx泛域名http-80-强制跳转https-443&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="架构" scheme="http://www.miw.cn/categories/%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="web" scheme="http://www.miw.cn/tags/web/"/>
+    
+      <category term="nginx" scheme="http://www.miw.cn/tags/nginx/"/>
+    
+      <category term="http" scheme="http://www.miw.cn/tags/http/"/>
+    
+      <category term="https" scheme="http://www.miw.cn/tags/https/"/>
+    
+  </entry>
   
   <entry>
     <title>docker运行oracle12c注意事项</title>
@@ -218,9 +250,9 @@
       <category term="JAVA" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/JAVA/"/>
     
     
-      <category term="java" scheme="http://www.miw.cn/tags/java/"/>
-    
       <category term="JRebel" scheme="http://www.miw.cn/tags/JRebel/"/>
+    
+      <category term="java" scheme="http://www.miw.cn/tags/java/"/>
     
       <category term="注册" scheme="http://www.miw.cn/tags/%E6%B3%A8%E5%86%8C/"/>
     
@@ -250,9 +282,9 @@
       <category term="WEB" scheme="http://www.miw.cn/categories/%E4%BD%9C%E5%93%81/WEB/"/>
     
     
-      <category term="web" scheme="http://www.miw.cn/tags/web/"/>
-    
       <category term="java" scheme="http://www.miw.cn/tags/java/"/>
+    
+      <category term="web" scheme="http://www.miw.cn/tags/web/"/>
     
       <category term="servlet" scheme="http://www.miw.cn/tags/servlet/"/>
     
