@@ -250,9 +250,9 @@
       <category term="JAVA" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/JAVA/"/>
     
     
-      <category term="JRebel" scheme="http://www.miw.cn/tags/JRebel/"/>
-    
       <category term="java" scheme="http://www.miw.cn/tags/java/"/>
+    
+      <category term="JRebel" scheme="http://www.miw.cn/tags/JRebel/"/>
     
       <category term="注册" scheme="http://www.miw.cn/tags/%E6%B3%A8%E5%86%8C/"/>
     
@@ -282,9 +282,9 @@
       <category term="WEB" scheme="http://www.miw.cn/categories/%E4%BD%9C%E5%93%81/WEB/"/>
     
     
-      <category term="java" scheme="http://www.miw.cn/tags/java/"/>
-    
       <category term="web" scheme="http://www.miw.cn/tags/web/"/>
+    
+      <category term="java" scheme="http://www.miw.cn/tags/java/"/>
     
       <category term="servlet" scheme="http://www.miw.cn/tags/servlet/"/>
     
