@@ -3,6 +3,35 @@
   
     
     <entry>
+      <title>利用nginx与frp/ngrok实现内网穿透，将网站架在自己家里或者公司内部</title>
+      <link href="/2019/04/17/li-yong-nginx-yu-frp-ngrok-shi-xian-nei-wang-chuan-tou-jiang-wang-zhan-jia-zai-zi-ji-jia-li-huo-zhe-gong-si-nei-bu/"/>
+      <url>/2019/04/17/li-yong-nginx-yu-frp-ngrok-shi-xian-nei-wang-chuan-tou-jiang-wang-zhan-jia-zai-zi-ji-jia-li-huo-zhe-gong-si-nei-bu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="利用nginx与frp-ngrok实现内网穿透，将网站架在自己家里或者公司内部"><a href="#利用nginx与frp-ngrok实现内网穿透，将网站架在自己家里或者公司内部" class="headerlink" title="利用nginx与frp/ngrok实现内网穿透，将网站架在自己家里或者公司内部"></a>利用nginx与frp/ngrok实现内网穿透，将网站架在自己家里或者公司内部</h2><p>这个需求其实在天朝一直都是比较强烈的，对于一些小企业，或者是个人，能够把网站架在企业内部，或者家里是非常方便的一件事情，但现在国内,如果没有备案的域名往往是无法被解析到相应的服务器的，但使用https却不受影响。基于以上原因，将服务器架在自己家里或者公司内部，就不受限制了。</p><h3 id="frp还是ngrok？"><a href="#frp还是ngrok？" class="headerlink" title="frp还是ngrok？"></a>frp还是ngrok？</h3><p>就目前来看这两个工具好像是使用最为广泛的，ngrok需要自己编译，也还算比较方便，但frp你可以直接下载编译好的版本，并且linux/win的版本都已经编译好了，下载后就可以直接使用。所以这里直接以frp作为样例。</p><h3 id="为什么还要nginx"><a href="#为什么还要nginx" class="headerlink" title="为什么还要nginx?"></a>为什么还要nginx?</h3><p>内网穿透，但无论如何还是需要一台有固定IP的公网服务器。如果你购买或者租用了一台公网服务器，其实不可能只用它来做中转，应该还是会用它来架一些其他的服务，如果我们直接在上面架frp或者ngrok来监控80和443端口，感觉还是有点浪费了。所以我们前端使用nginx来管理，后面可以将请求转到相应的服务端口即可，当然frp/ngrok也就放到nginx的后面了，后面还可以有tomcat或者iis、apache等。</p><h3 id="重点还是在nginx的配置"><a href="#重点还是在nginx的配置" class="headerlink" title="重点还是在nginx的配置"></a>重点还是在nginx的配置</h3><p>在下面的配置中，我在公网服务器上同样架了tomcat，端口8080，但并没有对外开放，只能使用127.0.0.1:8080进行访问，然后架了frps，端口开放为7000,同时这个7000也是frpc连接使用。将80端口的访问转向443，然后使用nginx反向代理，将443的请求以http协议转发到frps，然后转到内网的的服务器上。由于nginx已经配置了泛域名证书支持，所以所有的子站均显示为安全网站 。</p><pre><code>upstream tomcat9 {    server 127.0.0.1:8080;}upstream frps {    server 127.0.0.1:7000;}server {    listen 80;    server_name www.easex.cn;    location / {        proxy_http_version 1.1;        proxy_set_header Upgrade $http_upgrade;        proxy_set_header Connection &quot;upgrade&quot;;        proxy_set_header X-Real-IP $remote_addr;        proxy_set_header X-Forwarded-For $remote_addr;        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;        proxy_set_header Host $host;        proxy_redirect off;        proxy_pass http://tomcat9/;    }    }server {    listen 80;    server_name *.easex.cn;    return 301 https://$http_host$request_uri;}server {    listen 443 ssl http2;    server_name *.easex.cn;    ssl_certificate      cert/easex.cn/fullchina.cer;    ssl_certificate_key cert/easex.cn/easex.cn.key;    ssl_session_timeout 5m;    ssl_protocols TLSV1 TLSv1.1 TLSv1.2;    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;    ssl_prefer_server_ciphers on;    access_log logs/easex.cn_access.log;    error_log  logs/easex.cn_error.log;    location / {        proxy_http_version 1.1;        proxy_set_header Upgrade $http_upgrade;        proxy_set_header Connection &quot;upgrade&quot;;        proxy_set_header X-Real-IP $remote_addr;        proxy_set_header X-Forwarded-For $remote_addr;        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;        proxy_set_header Host $host;        proxy_redirect off;        proxy_pass http://frps/;    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 架构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+            <tag> nginx </tag>
+            
+            <tag> frp </tag>
+            
+            <tag> ngrok </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>nginx泛域名http(80)强制跳转https(443)</title>
       <link href="/2019/04/17/nginx-fan-yu-ming-http-80-qiang-zhi-tiao-zhuan-https-443/"/>
       <url>/2019/04/17/nginx-fan-yu-ming-http-80-qiang-zhi-tiao-zhuan-https-443/</url>

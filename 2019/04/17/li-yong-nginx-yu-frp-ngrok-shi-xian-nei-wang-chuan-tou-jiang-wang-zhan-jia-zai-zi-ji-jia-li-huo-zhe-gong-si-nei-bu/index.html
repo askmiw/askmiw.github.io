@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="java, javaweb, j2EE, android, 安卓, iOS, 苹果, spring, springboot, springMVC, hibernate, mybatis, javascript, 移动开发, 网站, 手机app, hexo-theme-matery">
-    <meta name="description" content="nginx泛域名http(80)强制跳转https(443) - |nginx泛域名http(80)强制跳转https(443)随着chrome浏览器在地址栏开始标注网站『不安全』的提示开始，各大小网站都开始| 从上个世纪就迷恋上了编码的人. 做自己喜欢的事, 编码可以让自己忘却尘世的烦恼.">
+    <meta name="description" content="利用nginx与frp/ngrok实现内网穿透，将网站架在自己家里或者公司内部 - |利用nginx与frp/ngrok实现内网穿透，将网站架在自己家里或者公司内部这个需求其实在天朝一直都是比较强烈的，对于一些小企业，或者是个| 从上个世纪就迷恋上了编码的人. 做自己喜欢的事, 编码可以让自己忘却尘世的烦恼.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>nginx泛域名http(80)强制跳转https(443) - 蜜友工作室</title>
+    <title>利用nginx与frp/ngrok实现内网穿透，将网站架在自己家里或者公司内部 - 蜜友工作室</title>
     <link rel="icon" type="image/png" href="/medias/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -251,13 +251,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        nginx泛域名http(80)强制跳转https(443)
+                        利用nginx与frp/ngrok实现内网穿透，将网站架在自己家里或者公司内部
                     </div>
                 </div>
             </div>
@@ -351,12 +351,12 @@
                     <span class="chip bg-color">nginx</span>
                 </a>
                 
-                <a href="../../../../tags/http/" target="_blank">
-                    <span class="chip bg-color">http</span>
+                <a href="../../../../tags/frp/" target="_blank">
+                    <span class="chip bg-color">frp</span>
                 </a>
                 
-                <a href="../../../../tags/https/" target="_blank">
-                    <span class="chip bg-color">https</span>
+                <a href="../../../../tags/ngrok/" target="_blank">
+                    <span class="chip bg-color">ngrok</span>
                 </a>
                 
             </div>
@@ -381,20 +381,33 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="nginx泛域名http-80-强制跳转https-443"><a href="#nginx泛域名http-80-强制跳转https-443" class="headerlink" title="nginx泛域名http(80)强制跳转https(443)"></a>nginx泛域名http(80)强制跳转https(443)</h2><p>随着chrome浏览器在地址栏开始标注网站『不安全』的提示开始，各大小网站都开始从http转为https了，并且都更注重网站的安全了。然页我们之前的很多站点都是基于http开发的，如果全部改造成https，必然是很大的工作量，幸好有第三方的工具可以为我们解决这个问题，可以让原有的系统不改动的情况下，或者少改动的情况下就能够满足这个需求。nginx就是其中使用最为广泛的一个，并且它的响应最快，目前国内绝大多数平台或者系统在前端都使用的是nginx或者nginx的变种。</p>
-<p>为每个域名（子域名）申请证书，然后配置nginx，这样就可以解决https证书问题。但为每个域名或者子域名都申请一个证书，暂起不说费用问题，申请也是比较麻烦的事，所以申请一个支持泛域名的能用证书是最方便的，所有子域名都可以使用该证书，肯定是最快捷的。</p>
-<h3 id="泛域名证书申请"><a href="#泛域名证书申请" class="headerlink" title="泛域名证书申请"></a>泛域名证书申请</h3><p>推荐使用acme.sh来申请，下载地址和使用说明</p>
-<pre><code>https://github.com/Neilpang/acme.sh
-</code></pre><p>安装很简单, 一个命令:</p>
-<pre class=" language-shell"><code class="language-shell">curl  https://get.acme.sh | sh
-</code></pre>
-<p>并且acme.sh 支持大多数国内知名dns的api方式。比如dnspod,aliyun，只需要在相应的平台上申请id和key即可使用api方式使用acme.sh，非常方便，申请证书一条命令就搞定了。<br>以下命令使用dnspod的api方式申请easex.cn泛域名证书，其下的所有子域名均可以使用。</p>
-<pre class=" language-shell"><code class="language-shell">acme.sh --issue -d easex.cn -d *.easex.cn --dns dns_dp
-</code></pre>
-<p>申请到的证书默认存放在 当前用户的 <code>~/.acme.sh/easex.cn（域名）</code>目录下。你可以copy出来，或者使用 acme.sh的install-cert命令来安装到指定目录。</p>
-<h3 id="nginx的配置"><a href="#nginx的配置" class="headerlink" title="nginx的配置"></a>nginx的配置</h3><p>nginx的安装就不说了，在centos下通常用yum 来安装，也可以自己编译。这里只说配置一事。网上虽然有很多关于http跳转https的配置，但都只针对单域名的，对泛域名都无法使用。<br>以下是本人使用着的配置，供大家参考。</p>
-<pre class=" language-conf"><code class="language-conf">upstream tomcat9 {
+                <h2 id="利用nginx与frp-ngrok实现内网穿透，将网站架在自己家里或者公司内部"><a href="#利用nginx与frp-ngrok实现内网穿透，将网站架在自己家里或者公司内部" class="headerlink" title="利用nginx与frp/ngrok实现内网穿透，将网站架在自己家里或者公司内部"></a>利用nginx与frp/ngrok实现内网穿透，将网站架在自己家里或者公司内部</h2><p>这个需求其实在天朝一直都是比较强烈的，对于一些小企业，或者是个人，能够把网站架在企业内部，或者家里是非常方便的一件事情，但现在国内,如果没有备案的域名往往是无法被解析到相应的服务器的，但使用https却不受影响。基于以上原因，将服务器架在自己家里或者公司内部，就不受限制了。</p>
+<h3 id="frp还是ngrok？"><a href="#frp还是ngrok？" class="headerlink" title="frp还是ngrok？"></a>frp还是ngrok？</h3><p>就目前来看这两个工具好像是使用最为广泛的，ngrok需要自己编译，也还算比较方便，但frp你可以直接下载编译好的版本，并且linux/win的版本都已经编译好了，下载后就可以直接使用。所以这里直接以frp作为样例。</p>
+<h3 id="为什么还要nginx"><a href="#为什么还要nginx" class="headerlink" title="为什么还要nginx?"></a>为什么还要nginx?</h3><p>内网穿透，但无论如何还是需要一台有固定IP的公网服务器。如果你购买或者租用了一台公网服务器，其实不可能只用它来做中转，应该还是会用它来架一些其他的服务，如果我们直接在上面架frp或者ngrok来监控80和443端口，感觉还是有点浪费了。所以我们前端使用nginx来管理，后面可以将请求转到相应的服务端口即可，当然frp/ngrok也就放到nginx的后面了，后面还可以有tomcat或者iis、apache等。</p>
+<h3 id="重点还是在nginx的配置"><a href="#重点还是在nginx的配置" class="headerlink" title="重点还是在nginx的配置"></a>重点还是在nginx的配置</h3><p>在下面的配置中，我在公网服务器上同样架了tomcat，端口8080，但并没有对外开放，只能使用127.0.0.1:8080进行访问，然后架了frps，端口开放为7000,同时这个7000也是frpc连接使用。将80端口的访问转向443，然后使用nginx反向代理，将443的请求以http协议转发到frps，然后转到内网的的服务器上。由于nginx已经配置了泛域名证书支持，所以所有的子站均显示为安全网站 。</p>
+<pre><code>upstream tomcat9 {
     server 127.0.0.1:8080;
+}
+
+upstream frps {
+    server 127.0.0.1:7000;
+}
+server {
+    listen 80;
+    server_name www.easex.cn;
+    location / {
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection &quot;upgrade&quot;;
+
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_redirect off;
+
+        proxy_pass http://tomcat9/;
+    }    
 }
 server {
     listen 80;
@@ -418,7 +431,7 @@ server {
     location / {
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
+        proxy_set_header Connection &quot;upgrade&quot;;
 
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $remote_addr;
@@ -426,14 +439,12 @@ server {
         proxy_set_header Host $host;
         proxy_redirect off;
 
-        proxy_pass http://tomcat9/;
+        proxy_pass http://frps/;
     }
 
 }
-</code></pre>
-<p>这里的server_name均指定的为 <code>*.easex.cn</code> ，重点就在于 <code>return 301 https://$http_host$request_uri;</code> 这一句。在这里不得不提一下不管是使用$host还是$server_name，都不能让浏览器正常跳转到相应的子域名，只有使用$http_host这样才可以，困绕了我两天时间。<br>通过以上配置，80端口被强制跳转到了443，但443中通过 <code>proxy_pass http://tomcat9/;</code>实际还是跳转回了http的原始端口，但对外，浏览器和用户所看到的确实是https了，并且显示的是安全网站。</p>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>服务器应该要开放 80 443端口。</p>
 
+</code></pre>
             </div>
             <hr/>
 
@@ -570,7 +581,7 @@ server {
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://www.miw.cn" class="b-link-green">蜜友工作室</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="" class="b-link-green">nginx泛域名http(80)强制跳转https(443)</a>
+                    <a href="" class="b-link-green">利用nginx与frp/ngrok实现内网穿透，将网站架在自己家里或者公司内部</a>
                 </p>
             </div>
         </div>
@@ -592,7 +603,7 @@ server {
         repo: 'askmiw.github.io',
         owner: 'askmiw',
         admin: "miws",
-        id: '2019-04-17T12-30-05',
+        id: '2019-04-17T13-27-43',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -609,10 +620,10 @@ server {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="../li-yong-nginx-yu-frp-ngrok-shi-xian-nei-wang-chuan-tou-jiang-wang-zhan-jia-zai-zi-ji-jia-li-huo-zhe-gong-si-nei-bu/">
+                <a href="">
                     <div class="card-image">
                         
                         
@@ -624,9 +635,9 @@ server {
                 <div class="card-content article-content">
                     <div class="summary">利用nginx与frp/ngrok实现内网穿透，将网站架在自己家里或者公司内部这个需求其实在天朝一直都是比较强烈的，对于一些小企业，或者是个人，能够把网站架在企业内部，或者家里是非常方便的一件事情，但现在国内,如果没有备案的域名往往是无法被</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -639,6 +650,7 @@ server {
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -667,27 +679,27 @@ server {
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="../../../03/27/docker-yun-xing-oracle12c-zhu-yi-shi-xiang/">
+                <a href="../nginx-fan-yu-ming-http-80-qiang-zhi-tiao-zhuan-https-443/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="docker运行oracle12c注意事项">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="nginx泛域名http(80)强制跳转https(443)">
                         
-                        <span class="card-title">docker运行oracle12c注意事项</span>
+                        <span class="card-title">nginx泛域名http(80)强制跳转https(443)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">docker运行oracle12c注意事项docker的安装就不说了，这里主要说在docker中运行oracle的事情。首先oracle映像本身比较大，近2.8G,所以你的磁盘空间一定要够，再有运行时还需要大约7G的空间，所以空间要足够，再</div>
+                    <div class="summary">nginx泛域名http(80)强制跳转https(443)随着chrome浏览器在地址栏开始标注网站『不安全』的提示开始，各大小网站都开始从http转为https了，并且都更注重网站的安全了。然页我们之前的很多站点都是基于http开发的，</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-27
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="../../../../categories/数据库/" class="post-category" target="_blank">
-                                    数据库
+                            <a href="../../../../categories/架构/" class="post-category" target="_blank">
+                                    架构
                                 </a>
                             
                             
@@ -697,16 +709,20 @@ server {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="../../../../tags/docker/" target="_blank">
-                        <span class="chip bg-color">docker</span>
+                    <a href="../../../../tags/web/" target="_blank">
+                        <span class="chip bg-color">web</span>
                     </a>
                     
-                    <a href="../../../../tags/数据库/" target="_blank">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="../../../../tags/nginx/" target="_blank">
+                        <span class="chip bg-color">nginx</span>
                     </a>
                     
-                    <a href="../../../../tags/oracle/" target="_blank">
-                        <span class="chip bg-color">oracle</span>
+                    <a href="../../../../tags/http/" target="_blank">
+                        <span class="chip bg-color">http</span>
+                    </a>
+                    
+                    <a href="../../../../tags/https/" target="_blank">
+                        <span class="chip bg-color">https</span>
                     </a>
                     
                 </div>
@@ -722,7 +738,7 @@ server {
         <div class="toc-widget">
             <h4>目录</h4>
             <div id="toc-content">
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nginx泛域名http-80-强制跳转https-443"><span class="post-toc-text">nginx泛域名http(80)强制跳转https(443)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#泛域名证书申请"><span class="post-toc-text">泛域名证书申请</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#nginx的配置"><span class="post-toc-text">nginx的配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意事项"><span class="post-toc-text">注意事项</span></a></li></ol></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#利用nginx与frp-ngrok实现内网穿透，将网站架在自己家里或者公司内部"><span class="post-toc-text">利用nginx与frp/ngrok实现内网穿透，将网站架在自己家里或者公司内部</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#frp还是ngrok？"><span class="post-toc-text">frp还是ngrok？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么还要nginx"><span class="post-toc-text">为什么还要nginx?</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重点还是在nginx的配置"><span class="post-toc-text">重点还是在nginx的配置</span></a></li></ol></li></ol>
             </div>
         </div>
     </div>

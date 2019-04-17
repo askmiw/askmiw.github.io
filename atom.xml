@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.miw.cn/"/>
-  <updated>2019-04-17T05:14:19.607Z</updated>
+  <updated>2019-04-17T06:09:11.773Z</updated>
   <id>http://www.miw.cn/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用nginx与frp/ngrok实现内网穿透，将网站架在自己家里或者公司内部</title>
+    <link href="http://www.miw.cn/2019/04/17/li-yong-nginx-yu-frp-ngrok-shi-xian-nei-wang-chuan-tou-jiang-wang-zhan-jia-zai-zi-ji-jia-li-huo-zhe-gong-si-nei-bu/"/>
+    <id>http://www.miw.cn/2019/04/17/li-yong-nginx-yu-frp-ngrok-shi-xian-nei-wang-chuan-tou-jiang-wang-zhan-jia-zai-zi-ji-jia-li-huo-zhe-gong-si-nei-bu/</id>
+    <published>2019-04-17T05:27:43.000Z</published>
+    <updated>2019-04-17T06:09:11.773Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;利用nginx与frp-ngrok实现内网穿透，将网站架在自己家里或者公司内部&quot;&gt;&lt;a href=&quot;#利用nginx与frp-ngrok实现内网穿透，将网站架在自己家里或者公司内部&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="架构" scheme="http://www.miw.cn/categories/%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="web" scheme="http://www.miw.cn/tags/web/"/>
+    
+      <category term="nginx" scheme="http://www.miw.cn/tags/nginx/"/>
+    
+      <category term="frp" scheme="http://www.miw.cn/tags/frp/"/>
+    
+      <category term="ngrok" scheme="http://www.miw.cn/tags/ngrok/"/>
+    
+  </entry>
   
   <entry>
     <title>nginx泛域名http(80)强制跳转https(443)</title>
