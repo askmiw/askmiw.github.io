@@ -19,13 +19,13 @@
       
         <tags>
             
-            <tag> mariadb </tag>
-            
             <tag> mysql </tag>
             
             <tag> 时区 </tag>
             
             <tag> docker </tag>
+            
+            <tag> Mariadb </tag>
             
         </tags>
       
