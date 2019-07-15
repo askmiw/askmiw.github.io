@@ -38,13 +38,13 @@
       <category term="数据库" scheme="http://www.miw.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
+      <category term="Mariadb" scheme="http://www.miw.cn/tags/Mariadb/"/>
+    
       <category term="mysql" scheme="http://www.miw.cn/tags/mysql/"/>
     
       <category term="时区" scheme="http://www.miw.cn/tags/%E6%97%B6%E5%8C%BA/"/>
     
       <category term="docker" scheme="http://www.miw.cn/tags/docker/"/>
-    
-      <category term="Mariadb" scheme="http://www.miw.cn/tags/Mariadb/"/>
     
   </entry>
   
@@ -164,9 +164,9 @@
       <category term="数据库" scheme="http://www.miw.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="mysql" scheme="http://www.miw.cn/tags/mysql/"/>
-    
       <category term="Mariadb" scheme="http://www.miw.cn/tags/Mariadb/"/>
+    
+      <category term="mysql" scheme="http://www.miw.cn/tags/mysql/"/>
     
       <category term="数据字典" scheme="http://www.miw.cn/tags/%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8/"/>
     

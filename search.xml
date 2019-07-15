@@ -19,13 +19,13 @@
       
         <tags>
             
+            <tag> Mariadb </tag>
+            
             <tag> mysql </tag>
             
             <tag> 时区 </tag>
             
             <tag> docker </tag>
-            
-            <tag> Mariadb </tag>
             
         </tags>
       
@@ -133,9 +133,9 @@
       
         <tags>
             
-            <tag> mysql </tag>
-            
             <tag> Mariadb </tag>
+            
+            <tag> mysql </tag>
             
             <tag> 数据字典 </tag>
             
