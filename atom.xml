@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.miw.cn/"/>
-  <updated>2019-07-15T08:50:37.062Z</updated>
+  <updated>2019-07-15T09:13:29.780Z</updated>
   <id>http://www.miw.cn/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mariadb(mysql)定时任务的使用</title>
+    <link href="http://www.miw.cn/2019/07/15/mariadb-mysql-ding-shi-ren-wu-de-shi-yong/"/>
+    <id>http://www.miw.cn/2019/07/15/mariadb-mysql-ding-shi-ren-wu-de-shi-yong/</id>
+    <published>2019-07-15T08:54:19.000Z</published>
+    <updated>2019-07-15T09:13:29.780Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Mariadb-mysql-定时任务的使用&quot;&gt;&lt;a href=&quot;#Mariadb-mysql-定时任务的使用&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://www.miw.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="Mariadb" scheme="http://www.miw.cn/tags/Mariadb/"/>
+    
+      <category term="mysql" scheme="http://www.miw.cn/tags/mysql/"/>
+    
+      <category term="定时任务" scheme="http://www.miw.cn/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>Mariadb(mysql)默认时区处理及docker运行配置</title>
