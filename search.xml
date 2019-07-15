@@ -3,6 +3,35 @@
   
     
     <entry>
+      <title>Mariadb(mysql)默认时区处理及docker运行配置</title>
+      <link href="/2019/07/15/mariadb-mysql-mo-ren-shi-qu-chu-li-ji-docker-yun-xing-pei-zhi/"/>
+      <url>/2019/07/15/mariadb-mysql-mo-ren-shi-qu-chu-li-ji-docker-yun-xing-pei-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Mariadb-mysql-默认时区处理及docker运行配置"><a href="#Mariadb-mysql-默认时区处理及docker运行配置" class="headerlink" title="Mariadb(mysql)默认时区处理及docker运行配置"></a>Mariadb(mysql)默认时区处理及docker运行配置</h2><h3 id="查看时区和当前时间"><a href="#查看时区和当前时间" class="headerlink" title="查看时区和当前时间"></a>查看时区和当前时间</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">show</span> variables <span class="token operator">like</span> <span class="token string">"%time_zone%"</span><span class="token punctuation">;</span><span class="token keyword">select</span> <span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><h3 id="临时修改时区"><a href="#临时修改时区" class="headerlink" title="临时修改时区"></a>临时修改时区</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">set</span> <span class="token keyword">global</span> time_zone <span class="token operator">=</span> <span class="token string">'+8:00'</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">##修改mysql全局时区为北京时间，即我们所在的东8区</span><span class="token keyword">set</span> time_zone <span class="token operator">=</span> <span class="token string">'+8:00'</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">##修改当前会话时区</span>flush <span class="token keyword">privileges</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">#立即生效</span></code></pre><h3 id="永久生效"><a href="#永久生效" class="headerlink" title="永久生效"></a>永久生效</h3><p>在/etc/my.cnf的[mysqld]区域中加上，重启mysql使新时区生效</p><pre><code>#vim /etc/my.cnf default-time_zone = &#39;+8:00&#39;#systemctl restart mysql</code></pre><h3 id="在docker中运行"><a href="#在docker中运行" class="headerlink" title="在docker中运行"></a>在docker中运行</h3><p>如果mariadb(mysql)是在docker中运行，本来想用-e参数方式注入参数，却发现并不能生效，于是找到了docker的时区配置命令。<br>在宿主机上运行,进入控制台</p><pre class=" language-shell"><code class="language-shell">#进入控制台docker exec -it mariadb /bin/bash #修改默认时区,根据提示选择区域和城市#dpkg-reconfigure tzdata#需要重新启动docker restart mariadb</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mariadb </tag>
+            
+            <tag> mysql </tag>
+            
+            <tag> 时区 </tag>
+            
+            <tag> docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>利用nginx与frp/ngrok实现内网穿透，将网站架在自己家里或者公司内部</title>
       <link href="/2019/04/17/li-yong-nginx-yu-frp-ngrok-shi-xian-nei-wang-chuan-tou-jiang-wang-zhan-jia-zai-zi-ji-jia-li-huo-zhe-gong-si-nei-bu/"/>
       <url>/2019/04/17/li-yong-nginx-yu-frp-ngrok-shi-xian-nei-wang-chuan-tou-jiang-wang-zhan-jia-zai-zi-ji-jia-li-huo-zhe-gong-si-nei-bu/</url>
@@ -216,9 +245,9 @@
       
         <tags>
             
-            <tag> JRebel </tag>
-            
             <tag> java </tag>
+            
+            <tag> JRebel </tag>
             
             <tag> 注册 </tag>
             
