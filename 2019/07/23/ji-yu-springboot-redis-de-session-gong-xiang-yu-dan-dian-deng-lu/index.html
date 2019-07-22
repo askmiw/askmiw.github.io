@@ -452,33 +452,32 @@
 </code></pre>
 <p>将该项目打包为set.war</p>
 <ul>
-<li><p>set项目</p>
+<li>set项目</li>
+</ul>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
 <span class="token annotation punctuation">@EnableRedisHttpSession</span>
 <span class="token annotation punctuation">@RestController</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GetApplication</span> <span class="token punctuation">{</span>
 
-  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>GetApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>GetApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-  <span class="token annotation punctuation">@Autowired</span>
-  HttpSession session<span class="token punctuation">;</span>
-  <span class="token annotation punctuation">@Autowired</span>
-  HttpServletRequest req<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    HttpSession session<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    HttpServletRequest req<span class="token punctuation">;</span>
 
-  <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span>
-  <span class="token keyword">public</span> Object <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span> session<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"state"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"serverPort"</span><span class="token punctuation">,</span> req<span class="token punctuation">.</span><span class="token function">getLocalPort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">return</span> map<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> Object <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span> session<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"state"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"serverPort"</span><span class="token punctuation">,</span> req<span class="token punctuation">.</span><span class="token function">getLocalPort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> map<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>将该项目打包为get.war<br>再分别将set.war,get.war部署在tomcatA和tomcatB,再通过 tomcatA/set 设置session内容, 然后通过 tomcatB/get 就发现无法获得session的值。</p>
-</li>
-</ul>
 <h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>尽管我们使用的路径都是一样的，但其实是两个项目，与前面的一个项目是完全不同的，问题就在于 session和cookie在默认情况下是与项目路径相关的，在同一个项目的情况下两个方法所需要的cookie依赖的项目路径是相同的，所以获取session的值就没有问题，但在后一种情况下，cookie的路径是分别属于不同的项目的，所以第二个项目就无法获得第一个项目中设置的session内容了。</p>
 <h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>解决方法在springboot项目中其实也非常简单。既然cookie路径发生了变化，那我们让它配置为相同的路径就解决了。<br>在每个子项目中都添加一个配置类或者直接设置cookie的路径，如果有域名还可以设置域名的限制，比如 set.xxx.com 与 get.xxx.com 这种情况与我们就需要设置cookie的域名为 xxx.com，以确保无法在哪个项目下都能够获取 xxx.com 这个域名下的cookie值。这样就确保能够正常获得共享的session值了。</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
