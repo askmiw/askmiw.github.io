@@ -23,9 +23,9 @@
             
             <tag> Redis </tag>
             
-            <tag> 单点登录 </tag>
-            
             <tag> session </tag>
+            
+            <tag> 单点登录 </tag>
             
         </tags>
       
@@ -301,9 +301,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> JRebel </tag>
+            
+            <tag> java </tag>
             
             <tag> 注册 </tag>
             
@@ -330,9 +330,9 @@
       
         <tags>
             
-            <tag> web </tag>
-            
             <tag> java </tag>
+            
+            <tag> web </tag>
             
             <tag> servlet </tag>
             

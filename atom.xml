@@ -42,9 +42,9 @@
     
       <category term="Redis" scheme="http://www.miw.cn/tags/Redis/"/>
     
-      <category term="单点登录" scheme="http://www.miw.cn/tags/%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/"/>
-    
       <category term="session" scheme="http://www.miw.cn/tags/session/"/>
+    
+      <category term="单点登录" scheme="http://www.miw.cn/tags/%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/"/>
     
   </entry>
   
@@ -350,9 +350,9 @@
       <category term="JAVA" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/JAVA/"/>
     
     
-      <category term="java" scheme="http://www.miw.cn/tags/java/"/>
-    
       <category term="JRebel" scheme="http://www.miw.cn/tags/JRebel/"/>
+    
+      <category term="java" scheme="http://www.miw.cn/tags/java/"/>
     
       <category term="注册" scheme="http://www.miw.cn/tags/%E6%B3%A8%E5%86%8C/"/>
     
@@ -382,9 +382,9 @@
       <category term="WEB" scheme="http://www.miw.cn/categories/%E4%BD%9C%E5%93%81/WEB/"/>
     
     
-      <category term="web" scheme="http://www.miw.cn/tags/web/"/>
-    
       <category term="java" scheme="http://www.miw.cn/tags/java/"/>
+    
+      <category term="web" scheme="http://www.miw.cn/tags/web/"/>
     
       <category term="servlet" scheme="http://www.miw.cn/tags/servlet/"/>
     
