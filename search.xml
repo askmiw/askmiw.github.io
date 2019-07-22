@@ -12,9 +12,7 @@
       
       <categories>
           
-          <category> 软件设计 </category>
-          
-          <category> JAVA </category>
+          <category> 架构 </category>
           
       </categories>
       
@@ -25,9 +23,9 @@
             
             <tag> Redis </tag>
             
-            <tag> session共享 </tag>
-            
             <tag> 单点登录 </tag>
+            
+            <tag> session </tag>
             
         </tags>
       
