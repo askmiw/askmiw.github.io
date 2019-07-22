@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.miw.cn/"/>
-  <updated>2019-07-15T09:16:06.869Z</updated>
+  <updated>2019-07-22T17:51:48.509Z</updated>
   <id>http://www.miw.cn/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于SpringBoot+Redis的Session共享与单点登录</title>
+    <link href="http://www.miw.cn/2019/07/23/ji-yu-springboot-redis-de-session-gong-xiang-yu-dan-dian-deng-lu/"/>
+    <id>http://www.miw.cn/2019/07/23/ji-yu-springboot-redis-de-session-gong-xiang-yu-dan-dian-deng-lu/</id>
+    <published>2019-07-22T18:55:52.000Z</published>
+    <updated>2019-07-22T17:51:48.509Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;基于SpringBoot-Redis的Session共享与单点登录&quot;&gt;&lt;a href=&quot;#基于SpringBoot-Redis的Session共享与单点登录&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="软件设计" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="JAVA" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/JAVA/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://www.miw.cn/tags/SpringBoot/"/>
+    
+      <category term="Redis" scheme="http://www.miw.cn/tags/Redis/"/>
+    
+      <category term="session共享" scheme="http://www.miw.cn/tags/session%E5%85%B1%E4%BA%AB/"/>
+    
+      <category term="单点登录" scheme="http://www.miw.cn/tags/%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Mariadb(mysql)定时任务的使用</title>

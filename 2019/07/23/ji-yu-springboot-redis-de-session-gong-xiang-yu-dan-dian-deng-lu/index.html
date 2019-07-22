@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="java, javaweb, j2EE, android, 安卓, iOS, 苹果, spring, springboot, springMVC, hibernate, mybatis, javascript, 移动开发, 网站, 手机app, hexo-theme-matery">
-    <meta name="description" content="Mariadb(mysql)定时任务的使用 - |Mariadb(mysql)定时任务的使用需求描述随时系统数据量的增加，在原系统中本来使用的一个视图，发现越来越影响性能了，本来该视图只是临| 从上个世纪就迷恋上了编码的人. 做自己喜欢的事, 编码可以让自己忘却尘世的烦恼.">
+    <meta name="description" content="基于SpringBoot+Redis的Session共享与单点登录 - |基于SpringBoot+Redis的Session共享与单点登录前言使用Redis来实现Session共享，其实网上已经有很多例子了，这是| 从上个世纪就迷恋上了编码的人. 做自己喜欢的事, 编码可以让自己忘却尘世的烦恼.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Mariadb(mysql)定时任务的使用 - 蜜友工作室</title>
+    <title>基于SpringBoot+Redis的Session共享与单点登录 - 蜜友工作室</title>
     <link rel="icon" type="image/png" href="/medias/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -251,13 +251,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Mariadb(mysql)定时任务的使用
+                        基于SpringBoot+Redis的Session共享与单点登录
                     </div>
                 </div>
             </div>
@@ -343,16 +343,20 @@
             
             <div class="article-tag">
                 
-                <a href="../../../../tags/Mariadb/" target="_blank">
-                    <span class="chip bg-color">Mariadb</span>
+                <a href="../../../../tags/SpringBoot/" target="_blank">
+                    <span class="chip bg-color">SpringBoot</span>
                 </a>
                 
-                <a href="../../../../tags/mysql/" target="_blank">
-                    <span class="chip bg-color">mysql</span>
+                <a href="../../../../tags/Redis/" target="_blank">
+                    <span class="chip bg-color">Redis</span>
                 </a>
                 
-                <a href="../../../../tags/定时任务/" target="_blank">
-                    <span class="chip bg-color">定时任务</span>
+                <a href="../../../../tags/session共享/" target="_blank">
+                    <span class="chip bg-color">session共享</span>
+                </a>
+                
+                <a href="../../../../tags/单点登录/" target="_blank">
+                    <span class="chip bg-color">单点登录</span>
                 </a>
                 
             </div>
@@ -362,68 +366,135 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="../../../../categories/数据库/" class="post-category" target="_blank">
-                        数据库
+                    <a href="../../../../categories/软件设计/" class="post-category" target="_blank">
+                        软件设计
+                    </a>
+                    
+                    <a href="../../../../categories/软件设计/JAVA/" class="post-category" target="_blank">
+                        JAVA
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-07-15
+                    <i class="fa fa-clock-o fa-fw"></i>2019-07-23
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Mariadb-mysql-定时任务的使用"><a href="#Mariadb-mysql-定时任务的使用" class="headerlink" title="Mariadb(mysql)定时任务的使用"></a>Mariadb(mysql)定时任务的使用</h2><h3 id="需求描述"><a href="#需求描述" class="headerlink" title="需求描述"></a>需求描述</h3><p>随时系统数据量的增加，在原系统中本来使用的一个视图，发现越来越影响性能了，本来该视图只是临时使用的，结果一搜索代码，发现已经有很多地方使用到了，修改代码的工作量太大，并且该视图使用的数据对实时性要求并不高，于是将该视图的内容处理成表，查询速度一下就提供上去了。</p>
-<h3 id="查看是否开启了计划事件"><a href="#查看是否开启了计划事件" class="headerlink" title="查看是否开启了计划事件"></a>查看是否开启了计划事件</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">SHOW</span> VARIABLES <span class="token operator">LIKE</span> <span class="token string">'event_scheduler'</span><span class="token punctuation">;</span>
-</code></pre>
-<h3 id="临时开启与关闭"><a href="#临时开启与关闭" class="headerlink" title="临时开启与关闭"></a>临时开启与关闭</h3><p>只需要将on改为off，把1改为0即可实现关闭。</p>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SET</span> <span class="token keyword">GLOBAL</span> event_scheduler <span class="token operator">=</span> <span class="token keyword">ON</span><span class="token punctuation">;</span>
-<span class="token keyword">SET</span> @<span class="token variable">@global.event_scheduler</span> <span class="token operator">=</span> <span class="token keyword">ON</span><span class="token punctuation">;</span>
-<span class="token keyword">SET</span> <span class="token keyword">GLOBAL</span> event_scheduler <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token keyword">SET</span> @<span class="token variable">@global.event_scheduler</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-</code></pre>
-<h3 id="计划事件语法"><a href="#计划事件语法" class="headerlink" title="计划事件语法"></a>计划事件语法</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span>
-    <span class="token punctuation">[</span><span class="token keyword">DEFINER</span> <span class="token operator">=</span> <span class="token keyword">user</span><span class="token punctuation">]</span>
-    EVENT
-    <span class="token punctuation">[</span><span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span><span class="token punctuation">]</span>
-    event_name
-    <span class="token keyword">ON</span> SCHEDULE schedule
-    <span class="token punctuation">[</span><span class="token keyword">ON</span> COMPLETION <span class="token punctuation">[</span><span class="token operator">NOT</span><span class="token punctuation">]</span> PRESERVE<span class="token punctuation">]</span>
-    <span class="token punctuation">[</span><span class="token keyword">ENABLE</span> <span class="token operator">|</span> <span class="token keyword">DISABLE</span> <span class="token operator">|</span> <span class="token keyword">DISABLE</span> <span class="token keyword">ON</span> SLAVE<span class="token punctuation">]</span>
-    <span class="token punctuation">[</span><span class="token keyword">COMMENT</span> <span class="token string">'string'</span><span class="token punctuation">]</span>
-    <span class="token keyword">DO</span> event_body<span class="token punctuation">;</span>
+                <h2 id="基于SpringBoot-Redis的Session共享与单点登录"><a href="#基于SpringBoot-Redis的Session共享与单点登录" class="headerlink" title="基于SpringBoot+Redis的Session共享与单点登录"></a>基于SpringBoot+Redis的Session共享与单点登录</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>使用Redis来实现Session共享，其实网上已经有很多例子了，这是确保在集群部署中最典型的redis使用场景。在SpringBoot项目中，其实可以一行运行代码都不用写，只需要简单添加添加依赖和一行注解就可以实现（当然配置信息还是需要的）。<br>然后简单地把该项目部署到不同的tomcat下，比如不同的端口(A、B)，但项目访问路径是相同的。此时在A中使用set方法，然后在B中使用get方法，就可以发现B中可以获取A中设置的内容。</p>
+<p>但如果就把这样的一个项目在多个tomcat中的部署说实现了单点登录，那就不对了。</p>
+<p>所谓单点登录是指在不同的项目中，只需要任何一个项目登录了，其他项目不需要登录。</p>
+<p>同样是上面的例子，我们把set和get两个方法分别放到两个项目(set、get)中，并且以集群方式把两个项目都部署到服务器A和B中，然后分别访问A服务器的set和B服务器的get，你就会发现完全得不到你想要的结果。</p>
+<h3 id="同一项目中的set-get"><a href="#同一项目中的set-get" class="headerlink" title="同一项目中的set/get"></a>同一项目中的set/get</h3><p>依赖添加就不说了，直接使用最简单的方式</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token annotation punctuation">@EnableRedisHttpSession</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SessionShareApplication</span> <span class="token punctuation">{</span>
 
-schedule:
-    AT <span class="token keyword">timestamp</span> <span class="token punctuation">[</span><span class="token operator">+</span> INTERVAL interval<span class="token punctuation">]</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-  <span class="token operator">|</span> EVERY interval
-    <span class="token punctuation">[</span>STARTS <span class="token keyword">timestamp</span> <span class="token punctuation">[</span><span class="token operator">+</span> INTERVAL interval<span class="token punctuation">]</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
-    <span class="token punctuation">[</span>ENDS <span class="token keyword">timestamp</span> <span class="token punctuation">[</span><span class="token operator">+</span> INTERVAL interval<span class="token punctuation">]</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>SessionShareApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-interval:
-    quantity {YEAR <span class="token operator">|</span> QUARTER <span class="token operator">|</span> MONTH <span class="token operator">|</span> DAY <span class="token operator">|</span> HOUR <span class="token operator">|</span> MINUTE <span class="token operator">|</span>
-              WEEK <span class="token operator">|</span> SECOND <span class="token operator">|</span> YEAR_MONTH <span class="token operator">|</span> DAY_HOUR <span class="token operator">|</span> DAY_MINUTE <span class="token operator">|</span>
-              DAY_SECOND <span class="token operator">|</span> HOUR_MINUTE <span class="token operator">|</span> HOUR_SECOND <span class="token operator">|</span> MINUTE_SECOND}
-</code></pre>
-<h3 id="使用样例"><a href="#使用样例" class="headerlink" title="使用样例"></a>使用样例</h3><p>每天临晨1点执行指定存储过程，在该存储过程中删除原数据，再从之前的视图中将数据insert到指定表中。</p>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> EVENT <span class="token keyword">if</span> <span class="token operator">not</span> <span class="token keyword">exists</span> event_update_data
-<span class="token keyword">on</span> schedule EVERY <span class="token number">1</span> DAY STARTS <span class="token string">'2019-07-16 00:01:00'</span>
-<span class="token keyword">on</span> completion preserve 
-<span class="token keyword">ENABLE</span>
-<span class="token keyword">do</span> <span class="token keyword">call</span> P_update_data<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h3 id="视图数据到表示例"><a href="#视图数据到表示例" class="headerlink" title="视图数据到表示例"></a>视图数据到表示例</h3><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">#直接用视图生成表，这样最简单，但有一样不好，没有索引和主键等。</span>
-<span class="token keyword">drop</span> <span class="token keyword">table</span> T1<span class="token punctuation">;</span>
-<span class="token keyword">create</span> <span class="token keyword">table</span> T1 <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> V1<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    HttpSession session<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    HttpServletRequest req<span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">#另一种，先根据视图建好表，并建立索引等，再用insert into T1 select * from V1;</span>
-<span class="token keyword">TRUNCATE</span> T1<span class="token punctuation">;</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> T1 <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> V1<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/set"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> Object <span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        session<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"state"</span><span class="token punctuation">,</span> <span class="token string">"state was setted."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span> session<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"state"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"serverPort"</span><span class="token punctuation">,</span> req<span class="token punctuation">.</span><span class="token function">getLocalPort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> map<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/get"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> Object <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span> session<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"state"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"serverPort"</span><span class="token punctuation">,</span> req<span class="token punctuation">.</span><span class="token function">getLocalPort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> map<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>由于这里涉及到执行时间问题，所以时区一定要确定，具体时区的配置请参看上一篇</p>
+<p>将该项目打war包，分别部署在tomcatA(端口8080)，tomcatB(端口8081)，然后通过tomcatA/set 方法设置session,再使用 tomcatB/get 方法即可获得session的值。但这只是实现了同一项目session的共享。并不是单点登录。</p>
+<p>为了验证，我们不仿将set/get方法拆分为两个项目。</p>
+<h3 id="拆分set-get为两个项目"><a href="#拆分set-get为两个项目" class="headerlink" title="拆分set/get为两个项目"></a>拆分set/get为两个项目</h3><ul>
+<li>get项目</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token annotation punctuation">@EnableRedisHttpSession</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SetApplication</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>SetApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    HttpSession session<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    HttpServletRequest req<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> Object <span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        session<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"state"</span><span class="token punctuation">,</span> <span class="token string">"state was setted."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span> session<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"state"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"serverPort"</span><span class="token punctuation">,</span> req<span class="token punctuation">.</span><span class="token function">getLocalPort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> map<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>将该项目打包为set.war</p>
+<ul>
+<li><p>set项目</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token annotation punctuation">@EnableRedisHttpSession</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GetApplication</span> <span class="token punctuation">{</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>GetApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token annotation punctuation">@Autowired</span>
+  HttpSession session<span class="token punctuation">;</span>
+  <span class="token annotation punctuation">@Autowired</span>
+  HttpServletRequest req<span class="token punctuation">;</span>
+
+  <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span>
+  <span class="token keyword">public</span> Object <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span> session<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"state"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"serverPort"</span><span class="token punctuation">,</span> req<span class="token punctuation">.</span><span class="token function">getLocalPort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> map<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>将该项目打包为get.war<br>再分别将set.war,get.war部署在tomcatA和tomcatB,再通过 tomcatA/set 设置session内容, 然后通过 tomcatB/get 就发现无法获得session的值。</p>
+</li>
+</ul>
+<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>尽管我们使用的路径都是一样的，但其实是两个项目，与前面的一个项目是完全不同的，问题就在于 session和cookie在默认情况下是与项目路径相关的，在同一个项目的情况下两个方法所需要的cookie依赖的项目路径是相同的，所以获取session的值就没有问题，但在后一种情况下，cookie的路径是分别属于不同的项目的，所以第二个项目就无法获得第一个项目中设置的session内容了。</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>解决方法在springboot项目中其实也非常简单。既然cookie路径发生了变化，那我们让它配置为相同的路径就解决了。<br>在每个子项目中都添加一个配置类或者直接设置cookie的路径，如果有域名还可以设置域名的限制，比如 set.xxx.com 与 get.xxx.com 这种情况与我们就需要设置cookie的域名为 xxx.com，以确保无法在哪个项目下都能够获取 xxx.com 这个域名下的cookie值。这样就确保能够正常获得共享的session值了。</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CookieConfig</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> DefaultCookieSerializer <span class="token function">defaultCookieSerializer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        DefaultCookieSerializer serializer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultCookieSerializer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        serializer<span class="token punctuation">.</span><span class="token function">setCookiePath</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//serializer.setDomainName("xxx.com"); //如果使用域名访问，建议对这一句进行设置    </span>
+        <span class="token keyword">return</span> serializer<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<p>以上才是正直的redis实现单点登录的正确打开方式。</p>
 
             </div>
             <hr/>
@@ -561,7 +632,7 @@ interval:
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://www.miw.cn" class="b-link-green">蜜友工作室</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="" class="b-link-green">Mariadb(mysql)定时任务的使用</a>
+                    <a href="" class="b-link-green">基于SpringBoot+Redis的Session共享与单点登录</a>
                 </p>
             </div>
         </div>
@@ -583,7 +654,7 @@ interval:
         repo: 'askmiw.github.io',
         owner: 'askmiw',
         admin: "miws",
-        id: '2019-07-15T16-54-19',
+        id: '2019-07-23T02-55-52',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -600,10 +671,10 @@ interval:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="../../23/ji-yu-springboot-redis-de-session-gong-xiang-yu-dan-dian-deng-lu/">
+                <a href="">
                     <div class="card-image">
                         
                         
@@ -615,9 +686,9 @@ interval:
                 <div class="card-content article-content">
                     <div class="summary">基于SpringBoot+Redis的Session共享与单点登录前言使用Redis来实现Session共享，其实网上已经有很多例子了，这是确保在集群部署中最典型的redis使用场景。在SpringBoot项目中，其实可以一行运行代码都不用</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -634,6 +705,7 @@ interval:
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -662,20 +734,17 @@ interval:
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="../mariadb-mysql-mo-ren-shi-qu-chu-li-ji-docker-yun-xing-pei-zhi/">
+                <a href="../../15/mariadb-mysql-ding-shi-ren-wu-de-shi-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Mariadb(mysql)默认时区处理及docker运行配置">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Mariadb(mysql)定时任务的使用">
                         
-                        <span class="card-title">Mariadb(mysql)默认时区处理及docker运行配置</span>
+                        <span class="card-title">Mariadb(mysql)定时任务的使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Mariadb(mysql)默认时区处理及docker运行配置查看时区和当前时间show variables like "%time_zone%";
-select now();
-
-临时修改时区set global time_zone = '</div>
+                    <div class="summary">Mariadb(mysql)定时任务的使用需求描述随时系统数据量的增加，在原系统中本来使用的一个视图，发现越来越影响性能了，本来该视图只是临时使用的，结果一搜索代码，发现已经有很多地方使用到了，修改代码的工作量太大，并且该视图使用的数据对实</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-15
@@ -703,12 +772,8 @@ select now();
                         <span class="chip bg-color">mysql</span>
                     </a>
                     
-                    <a href="../../../../tags/时区/" target="_blank">
-                        <span class="chip bg-color">时区</span>
-                    </a>
-                    
-                    <a href="../../../../tags/docker/" target="_blank">
-                        <span class="chip bg-color">docker</span>
+                    <a href="../../../../tags/定时任务/" target="_blank">
+                        <span class="chip bg-color">定时任务</span>
                     </a>
                     
                 </div>
@@ -724,7 +789,7 @@ select now();
         <div class="toc-widget">
             <h4>目录</h4>
             <div id="toc-content">
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Mariadb-mysql-定时任务的使用"><span class="post-toc-text">Mariadb(mysql)定时任务的使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#需求描述"><span class="post-toc-text">需求描述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看是否开启了计划事件"><span class="post-toc-text">查看是否开启了计划事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#临时开启与关闭"><span class="post-toc-text">临时开启与关闭</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#计划事件语法"><span class="post-toc-text">计划事件语法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用样例"><span class="post-toc-text">使用样例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#视图数据到表示例"><span class="post-toc-text">视图数据到表示例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意事项"><span class="post-toc-text">注意事项</span></a></li></ol></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基于SpringBoot-Redis的Session共享与单点登录"><span class="post-toc-text">基于SpringBoot+Redis的Session共享与单点登录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#同一项目中的set-get"><span class="post-toc-text">同一项目中的set/get</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#拆分set-get为两个项目"><span class="post-toc-text">拆分set/get为两个项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#问题分析"><span class="post-toc-text">问题分析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决方法"><span class="post-toc-text">解决方法</span></a></li></ol></li></ol>
             </div>
         </div>
     </div>
