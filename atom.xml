@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.miw.cn/"/>
-  <updated>2019-07-22T18:03:27.641Z</updated>
+  <updated>2019-07-30T07:02:57.052Z</updated>
   <id>http://www.miw.cn/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Redis为注册中心的Dubbo微服务架构（基于SpringBoot）</title>
+    <link href="http://www.miw.cn/2019/07/30/shi-yong-redis-wei-zhu-ce-zhong-xin-de-dubbo-wei-fu-wu-jia-gou-ji-yu-springboot/"/>
+    <id>http://www.miw.cn/2019/07/30/shi-yong-redis-wei-zhu-ce-zhong-xin-de-dubbo-wei-fu-wu-jia-gou-ji-yu-springboot/</id>
+    <published>2019-07-30T06:06:29.000Z</published>
+    <updated>2019-07-30T07:02:57.052Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="架构" scheme="http://www.miw.cn/categories/%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://www.miw.cn/tags/SpringBoot/"/>
+    
+      <category term="redis" scheme="http://www.miw.cn/tags/redis/"/>
+    
+      <category term="Dubbo" scheme="http://www.miw.cn/tags/Dubbo/"/>
+    
+      <category term="微服务" scheme="http://www.miw.cn/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+      <category term="RPC" scheme="http://www.miw.cn/tags/RPC/"/>
+    
+  </entry>
   
   <entry>
     <title>基于SpringBoot+Redis的Session共享与单点登录</title>
@@ -350,9 +384,9 @@
       <category term="JAVA" scheme="http://www.miw.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/JAVA/"/>
     
     
-      <category term="JRebel" scheme="http://www.miw.cn/tags/JRebel/"/>
-    
       <category term="java" scheme="http://www.miw.cn/tags/java/"/>
+    
+      <category term="JRebel" scheme="http://www.miw.cn/tags/JRebel/"/>
     
       <category term="注册" scheme="http://www.miw.cn/tags/%E6%B3%A8%E5%86%8C/"/>
     
@@ -382,9 +416,9 @@
       <category term="WEB" scheme="http://www.miw.cn/categories/%E4%BD%9C%E5%93%81/WEB/"/>
     
     
-      <category term="java" scheme="http://www.miw.cn/tags/java/"/>
-    
       <category term="web" scheme="http://www.miw.cn/tags/web/"/>
+    
+      <category term="java" scheme="http://www.miw.cn/tags/java/"/>
     
       <category term="servlet" scheme="http://www.miw.cn/tags/servlet/"/>
     
